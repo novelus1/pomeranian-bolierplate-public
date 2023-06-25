@@ -1,0 +1,53 @@
+:root {
+  --primary: #fe3756;
+  --white: white;
+  --dark-blue: #23213d;
+}
+.cookies-agreement {
+  position: fixed;
+  bottom: 0;
+  background: var(--dark-blue);
+  color: var(--white);
+  padding: 1em;
+  z-index: 2;
+  display: flex;
+  z-index: 99999999999;
+}
+
+.cookies-agreement button {
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  border-radius: 8px;
+}
+
+.cookies-agreement button.agree {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.cookies-agreement button.customize {
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+.cookies-agreement .cookies-icon {
+  float: left;
+  padding: 20px;
+}
+
+.cookies-agreement .text-wrapper {
+  margin: 1em;
+  flex: 1;
+}
+
+.cookies-agreement .button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.cookies-agreement .left {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+}
