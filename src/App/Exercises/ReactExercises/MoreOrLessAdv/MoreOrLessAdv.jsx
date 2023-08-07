@@ -7,12 +7,14 @@ export const MoreOrLessAdv = () => {
 
   const [result, setResult] = useState('');
 
-  function compareNumbers(x, y) {
-    console.log(x, y);
-    console.log(typeof x, typeof y);
-    if (x > y) {
+  function compareNumbers(a, b) {
+
+    a = parseInt(a);
+    b = parseInt(b);
+
+    if (a > b) {
       setResult('A jest większe od B');
-    } else if (x < y) {
+    } else if (a < b) {
       setResult('A jest mniejsze od B');
     } else {
       setResult('A i B są takie same');
