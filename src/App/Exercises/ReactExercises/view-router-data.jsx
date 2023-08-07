@@ -4,8 +4,9 @@ import { blockRouterMetaData as SubRouteExampleMetaData } from './SubRouteExampl
 import { blockRouterMetaData as ReactRouterEventsMetaData } from './ReactRouterEvents/router-data';
 import { blockRouterMetaData as Block09MetaData } from './Block09/router-data';
 import { blockRouterMetaData as MaterialUIBasicElementsMetaData } from './MaterialUIBasicElements/router-data';
-import { blockRouterMetaData as LocalDevAndFetch} from './LocalDev/router-data';
-import { blockRouterMetaData as ToDoList} from './ToDoWithServer/router-data';
+import { blockRouterMetaData as LocalDevAndFetch } from './LocalDev/router-data';
+import { blockRouterMetaData as ToDoList } from './ToDoWithServer/router-data';
+import { blockRouterMetaData as ReactUseRef } from './ReactUseRef/router-data';
 
 
 export const blockRouterMetaData = [
@@ -15,5 +16,6 @@ export const blockRouterMetaData = [
   MaterialUIBasicElementsMetaData,
   LocalDevAndFetch,
   ToDoList,
+  ReactUseRef,
 ];
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
