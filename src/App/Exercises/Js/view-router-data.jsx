@@ -8,7 +8,6 @@ import { blockRouterMetaData as EmptyValuesAndComments } from './EmptyValuesAndC
 import { blockRouterMetaData as JsArrayBasics } from './JsArrayBasics/router-data';
 import { blockRouterMetaData as JsExerciseFunctions } from './JsExerciseFunctions/router-data';
 import { blockRouterMetaData as Czas } from './JSTimeFunctions/router-data';
-import { blockRouterMetaData as HitTheMoleGame } from './HitTheMoleGame/router-data';
 import { blockRouterMetaData as MemoGame } from './MemoGame/router-data';
 import { blockRouterMetaData as TryCatchAndFinally } from './TryCatchAndFinally/router-data';
 import { blockRouterMetaData as JSPrototypesExercise } from './Exercise-js-prototypes/router-data';
@@ -24,7 +23,6 @@ export const blockRouterMetaData = [
   JsArrayBasics,
   JsExerciseFunctions,
   Czas,
-  HitTheMoleGame,
   MemoGame,
   TryCatchAndFinally,
   JSPrototypesExercise,
