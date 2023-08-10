@@ -25,7 +25,6 @@ export const blockRouterMetaData = [
   JsArrayBasics,
   JsExerciseFunctions,
   Czas,
-  HitTheMoleGame,
   MemoGame,
   TryCatchAndFinally,
   JSPrototypesExercise,
