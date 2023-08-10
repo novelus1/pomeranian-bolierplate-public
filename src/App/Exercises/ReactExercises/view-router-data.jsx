@@ -7,6 +7,7 @@ import { blockRouterMetaData as MaterialUIBasicElementsMetaData } from './Materi
 import { blockRouterMetaData as LocalDevAndFetch } from './LocalDev/router-data';
 import { blockRouterMetaData as ToDoList } from './ToDoWithServer/router-data';
 import { blockRouterMetaData as ReactUseRef } from './ReactUseRef/router-data';
+import { blockRouterMetaData as Forms } from './Forms/router-data';
 
 
 export const blockRouterMetaData = [
@@ -17,5 +18,6 @@ export const blockRouterMetaData = [
   LocalDevAndFetch,
   ToDoList,
   ReactUseRef,
+  Forms,
 ];
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
