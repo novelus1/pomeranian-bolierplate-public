@@ -30,6 +30,7 @@ export const blockRouterMetaData = [
   JSPrototypesExercise,
   JSThisKeyword,
   PromisesExercise,
+  HitTheMoleGame,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
