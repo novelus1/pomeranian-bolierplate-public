@@ -10,9 +10,11 @@ import { Exercises } from './App/Exercises';
 import { CV } from './App/Components/CV/CV';
 import { Blog } from './App/Blog/Blog';
 import { FAQ } from './App/FAQ';
+import Cookies from './App/Components/Cookies/Cookies';
 
 export function App() {
   return (
+
     <BrowserRouter>
       <Routes>
         <Route path="" element={<Layout withSidebar />}>
@@ -26,6 +28,7 @@ export function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
+      <Cookies />
     </BrowserRouter>
   );
 }
