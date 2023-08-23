@@ -13,7 +13,7 @@ export function AppHeader() {
     <header className="navigation">
       <div>
         <Link to="/">
-          <img src={startItLogo} className="logo" alt="" srcset="" />
+          <img src={startItLogo} className="logo" alt="" srcSet="" />
         </Link>
       </div>
       <div className="menu">
@@ -23,7 +23,7 @@ export function AppHeader() {
             console.log('Clicked cogwheel');
           }}
         >
-          <img src={cogwheel} alt="" srcset="" />
+          <img src={cogwheel} alt="" srcSet="" />
         </button>
         <div className="profile-picture">
           <div className="placeholder" />
@@ -38,7 +38,7 @@ export function AppHeader() {
           }}
           className="dropdown-menu"
         >
-          <img src={arrowDown} alt="" srcset="" />
+          <img src={arrowDown} alt="" srcSet="" />
         </button>
       </div>
     </header>

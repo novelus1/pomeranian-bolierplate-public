@@ -16,7 +16,7 @@ export const Dashboard = () => {
       sectionTitle: 'Ćwiczenia',
       icon: <img src={personalCard} alt="business card resume" />,
       description: 'wszystkie wykonane ćwiczenia',
-      link: '/excercise',
+      link: '/exercise',
     },
     {
       sectionTitle: 'Blog',
@@ -48,8 +48,9 @@ export const Dashboard = () => {
         </p>
       </header>
       <div className="links">
-        {availableCards.map((card) => (
+        {availableCards.map((card, index) => (
           <DashboardCard
+            key={index}
             sectionTitle={card.sectionTitle}
             description={card.description}
             link={card.link}
