@@ -1,7 +1,7 @@
 import './styles.css';
 import DashboardCard from '../Components/DashboardCard/DashboardCard';
 import { useState } from 'react';
-// import Cookies from '../Components/Cookies/Cookies';
+
 import personalCard from '../Images/tiles/personalcard.svg';
 
 export const Dashboard = () => {
@@ -16,7 +16,7 @@ export const Dashboard = () => {
       sectionTitle: 'Ćwiczenia',
       icon: <img src={personalCard} alt="business card resume" />,
       description: 'wszystkie wykonane ćwiczenia',
-      link: '/exercise',
+      link: '/exercises',
     },
     {
       sectionTitle: 'Blog',
@@ -58,7 +58,8 @@ export const Dashboard = () => {
           />
         ))}
       </div>
-      <aside className="about-me"></aside>
-    </div>
+      <aside className="about-me"><h2>Krzysztof Truszkowski</h2>
+      </aside>
+    </div >
   );
 };

@@ -1,7 +1,6 @@
-div .dashboard-card {
+.dashboard-card {
   box-sizing: border-box;
 
-  /* Auto layout */
 
   display: flexbox;
   flex-direction: column-reverse;
@@ -15,7 +14,6 @@ div .dashboard-card {
   top: 0px;
 
   background: #ffffff;
-  /* primary/primary */
 
   border: 0.66px solid #fe3756;
   border-radius: 8px;
@@ -25,16 +23,13 @@ div .dashboard-card {
   width: 146px;
   height: 27px;
 
-  /* body/regular-18 */
 
   font-weight: 400;
   font-size: 18px;
 
-  /* or 189% */
 
   text-align: center;
 
-  /* primary/primary */
 
   color: #fe3756;
 }
@@ -54,7 +49,6 @@ div .dashboard-card {
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
-  /* or 167% */
 
   text-align: center;
 
@@ -65,7 +59,6 @@ div .dashboard-card {
   width: 146px;
   height: 21px;
 
-  /* Inside auto layout */
 
   flex: none;
   order: 3;
