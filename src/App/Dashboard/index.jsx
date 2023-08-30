@@ -6,6 +6,7 @@ import booksaved from '../Images/book-saved.svg';
 import code from '../Images/tiles/code.svg';
 import hand from '../Images/hand-icon.png';
 import cv from '../Images/personalcard.svg';
+import selfie from '../Images/selfie.jpg'
 
 import { useState } from 'react';
 
@@ -19,7 +20,7 @@ export const Dashboard = () => {
     },
 
     {
-      sectionTitle: ' Ćwiczenia',
+      sectionTitle: 'Ćwiczenia',
       icon: <img src={edit} alt="exercise resume" />,
       description: 'wszystkie wykonane ćwiczenia',
       link: '/exercises',
@@ -41,7 +42,7 @@ export const Dashboard = () => {
 
     {
       sectionTitle: 'FAQ',
-      icon: <img src={faq} alt="faq resume" />,
+      icon: <img src={faq} alt="faq" />,
       description: 'odpowiedzi na najczęstsze pytania',
       link: '/faq',
     },
@@ -51,12 +52,12 @@ export const Dashboard = () => {
     <div className="dashboard">
       <header>
         <div className="dashboard-head">
-          <img className="hand-icon" src={hand} alt="zdjecie reki" style={{ width: '22px', height: '22px' }} />
-          <h3 style={{ marginLeft: '10px' }}>Hej, tu Krzysiek!</h3>
+          <img className="hand-icon" src={hand} alt="hand" />
+          <h3 style={{ marginLeft: '10px', fontWeight: '500' }}>Hej, tu Krzysiek!</h3>
         </div>
-        <p>
+        <p style={{ fontSize: '18px', fontWeight: '500' }}>
           Poniżej znajdziesz najważniejsze informacje na temat mojej
-          działalności
+          działalności.
         </p>
       </header>
       <div className="cards">
@@ -75,11 +76,9 @@ export const Dashboard = () => {
       </div>
       <aside>
         <div className="profile-img">
-          <img className="img-placeholder" src={hand} alt="my photo" />
-          <h2>Krzysztof Truszkowski</h2>
-          <p>Gdańsk</p>
-        </div>
-        <div className="info">
+          <img className="img-placeholder" src={selfie} alt="selfie" />
+          <h2 style={{ marginBottom: '0' }}>Krzysztof Truszkowski</h2>
+          <p style={{ marginBottom: '30px' }}>Gdańsk</p>
           <p>e-mail:</p>
           <p style={{ marginBottom: '30px' }}>
             <a href="mailto:krzysztof.truszkowski@outlook.com">
