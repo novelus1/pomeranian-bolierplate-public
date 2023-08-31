@@ -66,13 +66,19 @@ export const Article = (props) => {
               href="https://wiadomosci.wp.pl/to-zacieranie-sladow-chodzi-o-pakiety-wyborcze-sasina-6879848507329312a"
               target="blank"
               className="blog-link"
+              style={{ textDecoration: 'none' }}
             >
               WP.PL 1
             </a>
           </li>
           <br></br>
           <li>
-            <a href="https://www.wp.pl" target="blank" className="blog-link">
+            <a
+              href="https://www.wp.pl"
+              target="blank"
+              className="blog-link"
+              style={{ textDecoration: 'none' }}
+            >
               WP.PL 2
             </a>
           </li>
@@ -82,6 +88,7 @@ export const Article = (props) => {
               href="https://www.onet.pl/film/onetfilm/tvn-wbil-szpile-tvp-pokazano-alternatywna-rzeczywistosc-telewizji-rzadowej/2ksezfp,681c1dfa"
               target="blank"
               className="blog-link"
+              style={{ textDecoration: 'none' }}
             >
               ONET.PL
             </a>

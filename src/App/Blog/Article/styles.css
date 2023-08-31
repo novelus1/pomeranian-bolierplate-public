@@ -38,8 +38,8 @@
 }
 
 .first-post-blog {
-  background-color: rgba(35, 33, 61, 1);
-  border-radius: 1rem;
+  border: 2px solid #ff4d69;
+  border-radius: 2em;
   display: inline;
   padding: 4rem;
   flex-direction: column;
@@ -50,5 +50,14 @@
 
 .first-post-blog span,
 .first-post-blog h2 {
-  color: rgba(255, 255, 255, 1);
+  color: black;
+}
+.source-list a:hover {
+  filter: invert(9%) sepia(99%) saturate(5630%) hue-rotate(340deg)
+    brightness(121%) contrast(148%);
+  text-decoration: none;
+}
+
+.source-list a:visited {
+  color: black;
 }

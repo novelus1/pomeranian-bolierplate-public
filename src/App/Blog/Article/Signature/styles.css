@@ -23,15 +23,10 @@
 
 .article-content {
   border-radius: 8px;
-  background: var(--secondary-secondary, #23213d);
 }
 
 .article-content p,
 .article-content .blog-author-position,
 .article-content .blog-author-signature {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.post-container :first {
-  background-color: rgba(35, 33, 61, 1);
+  color: black;
 }

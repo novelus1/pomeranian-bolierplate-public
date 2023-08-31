@@ -6,8 +6,7 @@
   width: 230px;
   height: 230px;
   align-items: center;
-  border-radius: 8px;
-  box-shadow: 0px 0px 20px 5px rgba(209, 209, 209, 1);
+  border-radius: 1em;
 }
 .dashboard-card:hover {
   color: #ff4d69;

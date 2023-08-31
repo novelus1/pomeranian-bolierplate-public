@@ -4,10 +4,11 @@ import faq from '../Images/faq.svg';
 import edit from '../Images/tiles/edit.svg';
 import booksaved from '../Images/book-saved.svg';
 import code from '../Images/tiles/code.svg';
-import hand from '../Images/hand-icon.png';
 import cv from '../Images/personalcard.svg';
-import selfie from '../Images/selfie.jpg'
-
+import selfie from '../Images/selfie.jpg';
+import location from '../Images/location.svg';
+import phone from '../Images/phone.svg';
+import email from '../Images/email.png';
 import { useState } from 'react';
 
 export const Dashboard = () => {
@@ -52,12 +53,10 @@ export const Dashboard = () => {
     <div className="dashboard">
       <header>
         <div className="dashboard-head">
-          <img className="hand-icon" src={hand} alt="hand" />
-          <h3 style={{ marginLeft: '10px', fontWeight: '500' }}>Hej, tu Krzysiek!</h3>
+          <h3 style={{ fontWeight: '600' }}>Hello, I'm Krzysiek!</h3>
         </div>
-        <p style={{ fontSize: '18px', fontWeight: '500' }} className='dashboard-head__paragraph'>
-          Poniżej znajdziesz najważniejsze informacje na temat mojej
-          działalności.
+        <p style={{ fontSize: '20px' }} className="dashboard-head__paragraph">
+          Below you will find the most important information about my activity.
         </p>
       </header>
       <div className="cards">
@@ -77,17 +76,21 @@ export const Dashboard = () => {
       <aside>
         <div className="profile-img">
           <img className="img-placeholder" src={selfie} alt="selfie" />
-          <h2 style={{ marginBottom: '5px' }}>Krzysztof Truszkowski</h2>
-          <p style={{ marginBottom: '30px' }}>Gdańsk</p>
-          <p>e-mail:</p>
-          <p style={{ marginBottom: '30px' }}>
+          <h2 style={{ marginBottom: '5px', marginTop: '10px' }}>
+            Krzysztof Truszkowski
+          </h2>
+          <p style={{ marginBottom: '5px' }}>
+            <img src={location} alt="location" /> Gdańsk
+          </p>
+          <p style={{ marginBottom: '5px' }}>
             <a href="mailto:krzysztof.truszkowski@outlook.com">
-              krzysztof.truszkowski@outlook.com
+              <img src={email} alt="email" /> krzysztof.truszkowski@outlook.com
             </a>
           </p>
-          <p>telefon:</p>
           <p>
-            <a href="tel:533886489">533 886 489</a>
+            <a href="tel:533886489">
+              <img src={phone} alt="phone" /> 533886489
+            </a>
           </p>
         </div>
       </aside>

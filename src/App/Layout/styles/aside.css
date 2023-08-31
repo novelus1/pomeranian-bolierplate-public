@@ -45,3 +45,9 @@ aside li a:hover {
 aside li a:visited {
   text-decoration: none;
 }
+
+@media (max-width: 1336px) {
+  aside {
+    display: none;
+  }
+}
