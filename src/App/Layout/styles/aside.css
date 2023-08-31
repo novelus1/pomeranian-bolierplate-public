@@ -25,11 +25,12 @@ aside li {
 aside li a {
   display: block;
   padding: 0.5rem;
+  text-decoration: none;
 }
 
 aside a.active {
-  background-color: var(--color-primary-blue);
-  color: var(--color-white);
+  filter: invert(9%) sepia(99%) saturate(5630%) hue-rotate(340deg)
+    brightness(121%) contrast(148%);
 }
 
 .menu-icon {
@@ -37,6 +38,10 @@ aside a.active {
 }
 
 aside li a:hover {
-  background-color: var(--color-primary-blue);
-  color: var(--color-white);
+  filter: invert(9%) sepia(99%) saturate(5630%) hue-rotate(340deg)
+    brightness(121%) contrast(148%);
+}
+
+aside li a:visited {
+  text-decoration: none;
 }

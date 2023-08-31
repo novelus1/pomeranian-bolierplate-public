@@ -55,7 +55,7 @@ export const Dashboard = () => {
           <img className="hand-icon" src={hand} alt="hand" />
           <h3 style={{ marginLeft: '10px', fontWeight: '500' }}>Hej, tu Krzysiek!</h3>
         </div>
-        <p style={{ fontSize: '18px', fontWeight: '500' }}>
+        <p style={{ fontSize: '18px', fontWeight: '500' }} className='dashboard-head__paragraph'>
           Poniżej znajdziesz najważniejsze informacje na temat mojej
           działalności.
         </p>
@@ -77,7 +77,7 @@ export const Dashboard = () => {
       <aside>
         <div className="profile-img">
           <img className="img-placeholder" src={selfie} alt="selfie" />
-          <h2 style={{ marginBottom: '0' }}>Krzysztof Truszkowski</h2>
+          <h2 style={{ marginBottom: '5px' }}>Krzysztof Truszkowski</h2>
           <p style={{ marginBottom: '30px' }}>Gdańsk</p>
           <p>e-mail:</p>
           <p style={{ marginBottom: '30px' }}>

@@ -6,6 +6,11 @@
 }
 
 .exercises-categories a.active {
-  background-color: var(--color-primary-blue);
-  color: var(--color-white);
+  filter: invert(9%) sepia(99%) saturate(5630%) hue-rotate(340deg)
+    brightness(121%) contrast(148%);
+}
+
+.exercises-categories a:hover {
+  filter: invert(9%) sepia(99%) saturate(5630%) hue-rotate(340deg)
+    brightness(121%) contrast(148%);
 }
