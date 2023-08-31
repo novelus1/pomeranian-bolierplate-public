@@ -29,7 +29,8 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 1.5rem;
+  padding-left: 3em;
+  padding-top: 3em;
 }
 
 @media (max-width: 1336px) {

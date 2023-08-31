@@ -2,7 +2,6 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { AppHeader } from './AppHeader';
-import { AppFooter } from './AppFooter';
 import { ErrorBoundary } from './ErrorBoundary';
 
 import './styles/layout.css';
@@ -23,7 +22,6 @@ export const Layout = ({ withSidebar }) => {
         <main>
           <Outlet />
         </main>
-        <AppFooter />
       </div>
     </ErrorBoundary>
   );

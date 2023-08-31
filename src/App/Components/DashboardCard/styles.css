@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 230px;
+  width: 180px;
   height: 230px;
   align-items: center;
   border-radius: 1em;
@@ -20,7 +20,7 @@
 
 .dashboard-card p {
   font-size: 15px;
-  width: 180px;
+  max-width: 180px;
   margin: 7px;
 }
 .dashboard-card h3 {

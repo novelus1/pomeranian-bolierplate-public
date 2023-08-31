@@ -47,7 +47,7 @@ aside li a:visited {
 }
 
 @media (max-width: 1336px) {
-  aside {
+  aside ul {
     display: none;
   }
 }

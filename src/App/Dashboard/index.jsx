@@ -76,13 +76,13 @@ export const Dashboard = () => {
       <aside>
         <div className="profile-img">
           <img className="img-placeholder" src={selfie} alt="selfie" />
-          <h2 style={{ marginBottom: '5px', marginTop: '10px' }}>
+          <h2>
             Krzysztof Truszkowski
           </h2>
-          <p style={{ marginBottom: '5px' }}>
+          <p>
             <img src={location} alt="location" /> Gdańsk
           </p>
-          <p style={{ marginBottom: '5px' }}>
+          <p>
             <a href="mailto:krzysztof.truszkowski@outlook.com">
               <img src={email} alt="email" /> krzysztof.truszkowski@outlook.com
             </a>
