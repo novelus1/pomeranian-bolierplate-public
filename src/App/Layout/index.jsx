@@ -14,8 +14,8 @@ export const Layout = () => {
         <main>
           <Outlet />
         </main>
+        <AppFooter />
       </div>
-      <AppFooter />
     </ErrorBoundary>
   );
 };

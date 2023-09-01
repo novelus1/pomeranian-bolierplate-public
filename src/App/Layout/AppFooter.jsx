@@ -1,20 +1,19 @@
 import './styles/footer.css';
 import React from 'react';
 export function AppFooter() {
-    const email = "your-email@example.com"; // Replace with your actual email
-    const phone = "+1234567890"; // Replace with your actual phone number
+    const email = "krzysztof.truszkowski@outlook.com";
+    const phone = "+48-533-886-489";
 
     return (
         <footer>
-            <div>
-                Projekt uzyskał dofinansowanie ze środków Unii Europejskiej z
-                Europejskiego Funduszu Rozwoju
+            <div className='footer-text'>
+                The project received funding from the European Union's European Regional Development Fund
+                as part of the grant project 'Invest in Pomerania 2020.'
             </div>
-            <a href={`mailto:${email}`}>Email: {email}</a>
-            <div>
-                Regionalnego w ramach projektu grantowego „Invest in Pomerania 2020”.
-            </div>
-            <a href={`tel:${phone}`}>Tel: {phone}</a>
+            <div className='footer-info'>
+                <a href={`mailto:${email}`}>Email: {email}</a>
+                <a href={`tel:${phone}`}>Tel: {phone}</a>
+            </div >
         </footer>
     );
 }
