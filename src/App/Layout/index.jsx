@@ -3,26 +3,19 @@ import { Outlet } from 'react-router-dom';
 
 import { AppHeader } from './AppHeader';
 import { ErrorBoundary } from './ErrorBoundary';
-
+import { AppFooter } from './AppFooter';
 import './styles/layout.css';
-import { AppAside } from './AppAside';
-// import Cookies from '../Components/Cookies/Cookies';
 
-function getLayoutClassName(withSidebar) {
-  return withSidebar ? 'layout with-sidebar' : 'layout';
-}
-
-export const Layout = ({ withSidebar }) => {
+export const Layout = () => {
   return (
     <ErrorBoundary>
-      {/* <Cookies /> */}
-      <div className={getLayoutClassName(withSidebar)}>
+      <div className="layout-container">
         <AppHeader />
-        {withSidebar && <AppAside />}
         <main>
           <Outlet />
         </main>
       </div>
+      <AppFooter />
     </ErrorBoundary>
   );
 };

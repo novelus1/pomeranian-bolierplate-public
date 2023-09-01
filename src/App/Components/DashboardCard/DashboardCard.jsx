@@ -8,7 +8,7 @@ const DashboardCard = ({ sectionTitle, description, icon, link }) => {
       <h3>{sectionTitle}</h3>
       <div className="icon-wrapper">{icon}</div>
       <p>{description}</p>
-      <a href={link}>zobacz więcej</a>
+      <a href={link}>Read more</a>
     </div>
   );
 };

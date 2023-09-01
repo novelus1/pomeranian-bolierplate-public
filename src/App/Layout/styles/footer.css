@@ -1,0 +1,19 @@
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+}
+
+/* Style for the main content */
+main {
+  flex-grow: 1; /* Allow the main content to grow and take up remaining space */
+}
+
+/* Style for the footer */
+footer {
+  background-color: #333; /* Set the background color for the footer */
+  color: #fff; /* Set the text color for the footer */
+  padding: 20px; /* Add some padding to the footer */
+}

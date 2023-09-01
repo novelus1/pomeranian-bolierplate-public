@@ -5,10 +5,6 @@ import edit from '../Images/tiles/edit.svg';
 import booksaved from '../Images/book-saved.svg';
 import code from '../Images/tiles/code.svg';
 import cv from '../Images/personalcard.svg';
-import selfie from '../Images/selfie.jpg';
-import location from '../Images/location.svg';
-import phone from '../Images/phone.svg';
-import email from '../Images/email.png';
 import { useState } from 'react';
 
 export const Dashboard = () => {
@@ -27,24 +23,24 @@ export const Dashboard = () => {
       link: '/exercises',
     },
 
-    {
-      sectionTitle: 'Blog',
-      icon: <img src={booksaved} alt="blog resume" />,
-      description: 'wpisy blogowe o technologii front-end',
-      link: '/blog',
-    },
+    // {
+    //   sectionTitle: 'Blog',
+    //   icon: <img src={booksaved} alt="blog resume" />,
+    //   description: 'wpisy blogowe o technologii front-end',
+    //   link: '/blog',
+    // },
 
     {
       sectionTitle: 'Tech stack',
       icon: <img src={code} alt="tech stack resume" />,
-      description: 'stack technologiczny realizowany na kursie',
+      description: 'My current technology stack',
       link: '/tech',
     },
 
     {
-      sectionTitle: 'FAQ',
+      sectionTitle: 'About',
       icon: <img src={faq} alt="faq" />,
-      description: 'odpowiedzi na najczęstsze pytania',
+      description: 'Here you can read more about me!',
       link: '/faq',
     },
   ]);
@@ -53,11 +49,9 @@ export const Dashboard = () => {
     <div className="dashboard">
       <header>
         <div className="dashboard-head">
-          <h3 style={{ fontWeight: '600' }}>Hello, I'm Krzysiek!</h3>
+          <h3 style={{ fontWeight: '600', marginTop: '0.5em' }}>Hello, I'm Krzysiek!</h3>
+          <p>Below you can find the most important information about my activity. </p>
         </div>
-        <p style={{ fontSize: '20px' }} className="dashboard-head__paragraph">
-          Below you will find the most important information about my activity.
-        </p>
       </header>
       <div className="cards">
         {availableCards.map((card) => {
@@ -73,7 +67,7 @@ export const Dashboard = () => {
           );
         })}
       </div>
-      <aside>
+      {/* <aside>
         <div className="profile-img">
           <img className="img-placeholder" src={selfie} alt="selfie" />
           <h2>
@@ -93,7 +87,8 @@ export const Dashboard = () => {
             </a>
           </p>
         </div>
-      </aside>
+      </aside> */}
+
     </div>
   );
 };
