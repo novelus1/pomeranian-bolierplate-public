@@ -11,7 +11,7 @@ const CookieBanner = () => {
   );
 
   const handleConfirm = () => {
-    Cookies.set('acceptedCookies', 'true', { expires: 7 });
+    Cookies.set('acceptedCookies', 'true', { expires: 30 });
     localStorage.setItem('acceptedCookies', 'true');
     setHasAcceptedCookies(true);
     setIsCustomizing(false);

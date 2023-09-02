@@ -66,27 +66,3 @@
     width: 45px;
   }
 }
-
-@media (max-width: 450px) {
-  .dashboard-card {
-  }
-
-  .dashboard-card__title {
-    font-size: 15px;
-  }
-
-  .dashboard-card__description {
-    font-size: 12px;
-  }
-
-  .dashboard-card__link {
-    font-size: 10px;
-  }
-  .dashboard-card {
-    padding: 0.2em;
-  }
-
-  .dashboard img {
-    width: 40px;
-  }
-}

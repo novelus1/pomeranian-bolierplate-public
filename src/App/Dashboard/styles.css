@@ -73,7 +73,7 @@
   }
 }
 
-@media (max-width: 410px) {
+@media (max-width: 390px) {
   .dashboard__card-set {
     gap: 1em;
     margin-top: 1em;

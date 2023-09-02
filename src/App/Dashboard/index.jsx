@@ -10,16 +10,16 @@ import { useState } from 'react';
 export const Dashboard = () => {
   const [availableCards, setAvailableCards] = useState([
     {
-      sectionTitle: 'Moje CV',
+      sectionTitle: 'My CV',
       icon: <img src={cv} alt="business card resume" />,
-      description: 'podgląd cv wraz z doświadczeniem',
+      description: 'CV and experience preview',
       link: '/cv',
     },
 
     {
-      sectionTitle: 'Ćwiczenia',
+      sectionTitle: 'Projects',
       icon: <img src={edit} alt="exercise resume" />,
-      description: 'wszystkie wykonane ćwiczenia',
+      description: 'My projects and exercises',
       link: '/exercises',
     },
 
@@ -38,9 +38,9 @@ export const Dashboard = () => {
     },
 
     {
-      sectionTitle: 'About',
+      sectionTitle: 'FAQ',
       icon: <img src={faq} alt="faq" />,
-      description: 'Here you can read more about me!',
+      description: 'Frequently Asked Questions',
       link: '/faq',
     },
   ]);
@@ -49,7 +49,7 @@ export const Dashboard = () => {
     <div className="dashboard">
       <header className="dashboard__header">
         <div className="dashboard__head">
-          <h3 className="dashboard__title">Hello, I'm Krzysiek!</h3>
+          <h3 className="dashboard__title">Hi, I'm Krzysiek!</h3>
           <p className="dashboard__description">Below you can find the most important information about my activity. </p>
         </div>
       </header>
