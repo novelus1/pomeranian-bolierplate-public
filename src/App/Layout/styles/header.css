@@ -20,3 +20,8 @@
   text-decoration: none;
   color: #333;
 }
+
+.nav-link:hover {
+  filter: invert(9%) sepia(99%) saturate(5630%) hue-rotate(340deg)
+    brightness(121%) contrast(148%);
+}

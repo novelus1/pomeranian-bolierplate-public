@@ -47,16 +47,16 @@ export const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <header>
-        <div className="dashboard-head">
-          <h3 style={{ fontWeight: '600', marginTop: '0.5em' }}>Hello, I'm Krzysiek!</h3>
-          <p>Below you can find the most important information about my activity. </p>
+      <header className="dashboard__header">
+        <div className="dashboard__head">
+          <h3 className="dashboard__title">Hello, I'm Krzysiek!</h3>
+          <p className="dashboard__description">Below you can find the most important information about my activity. </p>
         </div>
       </header>
-      <div className="cards">
+      <div className="dashboard__card-set">
         {availableCards.map((card) => {
           return (
-            <div className="cards-main">
+            <div className="dashboard__card">
               <DashboardCard
                 sectionTitle={card.sectionTitle}
                 description={card.description}

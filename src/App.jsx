@@ -10,7 +10,7 @@ import { Exercises } from './App/Exercises';
 import { CV } from './App/Components/CV/CV';
 import { Blog } from './App/Blog/Blog';
 import { FAQ } from './App/FAQ';
-import Cookies from './App/Components/Cookies/Cookies';
+import CookieBanner from './App/Components/Cookies/Cookies';
 
 export function App() {
   return (
@@ -21,6 +21,7 @@ export function App() {
           <Route index element={<Navigate to="dashboard" />} />
           <Route path="dashboard/*" element={<Dashboard />} />
           <Route path="cv/*" element={<CV />} />
+
           <Route path="exercises/*" element={<Exercises />} />
           <Route path="blocks/*" element={<Blocks />} />
           <Route path="blog/*" element={<Blog />} />
@@ -28,7 +29,7 @@ export function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-      <Cookies />
+      <CookieBanner />
     </BrowserRouter>
   );
 }

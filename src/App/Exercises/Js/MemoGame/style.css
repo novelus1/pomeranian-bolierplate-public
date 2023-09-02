@@ -99,13 +99,11 @@
   color: white;
   width: 15rem;
   cursor: pointer;
-
 }
 
 .stopButton button:hover {
   background: #fe3756;
   border-color: #fe3756;
-
 }
 
 .memoGame {
