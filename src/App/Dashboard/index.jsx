@@ -38,9 +38,9 @@ export const Dashboard = () => {
     },
 
     {
-      sectionTitle: 'FAQ',
+      sectionTitle: 'About',
       icon: <img src={faq} alt="faq" />,
-      description: 'Frequently Asked Questions',
+      description: 'Here you can see who I am',
       link: '/faq',
     },
   ]);

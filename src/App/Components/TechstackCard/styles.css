@@ -1,0 +1,11 @@
+.techstack-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -0.8em;
+}
+
+.techstack-card img {
+  height: 60px;
+}

@@ -10,6 +10,7 @@ import { Exercises } from './App/Exercises';
 import { CV } from './App/Components/CV/CV';
 import { Blog } from './App/Blog/Blog';
 import { FAQ } from './App/FAQ';
+import { Techstack } from './App/Techstack';
 import CookieBanner from './App/Components/Cookies/Cookies';
 
 export function App() {
@@ -21,11 +22,11 @@ export function App() {
           <Route index element={<Navigate to="dashboard" />} />
           <Route path="dashboard/*" element={<Dashboard />} />
           <Route path="cv/*" element={<CV />} />
-
           <Route path="exercises/*" element={<Exercises />} />
           <Route path="blocks/*" element={<Blocks />} />
           <Route path="blog/*" element={<Blog />} />
           <Route path="faq/*" element={<FAQ />} />
+          <Route path="tech/*" element={<Techstack />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

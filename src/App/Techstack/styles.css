@@ -1,0 +1,101 @@
+.techstack__table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1em;
+}
+
+.techstack__category {
+  border-radius: 5px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  word-wrap: break-word;
+  max-width: 950px;
+}
+
+.techstack__category h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.techstack__card-set {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.techstack__card {
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+  width: 130px;
+}
+
+.techstack__category h2 {
+  font-size: 22px;
+}
+
+.techstack-card__description {
+  font-size: 14px;
+  margin-top: 1px;
+  font-weight: bold;
+}
+
+@media (max-width: 300px) {
+  .techstack__table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+  }
+  .techstack__category {
+    cursor: pointer;
+    background-color: #ffffffac;
+    color: #000000;
+    padding: 20px;
+    border: none;
+    margin: 1em;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 0;
+    height: 100%;
+  }
+
+  .techstack__card-set {
+    cursor: default;
+  }
+
+  .techstack__category h2 {
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 0px;
+  }
+
+  .techstack__card {
+    width: 100px;
+    background-color: transparent;
+    border: transparent;
+    cursor: default;
+  }
+
+  .techstack__card img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .techstack-card__description {
+    font-size: 12px;
+  }
+
+  .arrow {
+    vertical-align: middle;
+    display: inline-block;
+  }
+}

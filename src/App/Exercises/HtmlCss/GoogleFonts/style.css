@@ -29,7 +29,6 @@
     position: absolute;
     left: 0px;
   }
-
 }
 .animation {
   animation-name: slide-in;
@@ -39,7 +38,7 @@
 .business-card {
   display: flex;
   flex-direction: column;
-  gap: .2em;
+  gap: 0.2em;
 }
 .business-card * {
   margin: 0;
@@ -47,21 +46,24 @@
 
 .business-card a {
   text-decoration: none;
-  color:black;
+  color: black;
 }
 .business-card section {
-  margin-bottom: .2em;
+  margin-bottom: 0.2em;
 }
 
 .business-card section:nth-child(2) {
-  color: #FE3756;
+  color: #fe3756;
   animation-name: fade;
   animation-duration: 2s;
 }
 
 @keyframes fade {
-  from { opacity: 0;
-  } to { opacity: 1;
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
