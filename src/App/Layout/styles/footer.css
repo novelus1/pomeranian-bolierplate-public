@@ -19,7 +19,6 @@ footer {
   justify-content: space-between;
   padding: 18px;
   color: var(--color-white);
-  margin-top: 1em;
 }
 
 .footer__text {

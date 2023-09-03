@@ -17,7 +17,7 @@ export function AppHeader() {
       </div>
       <div className="link-container">
         <Link to="/" className='nav-link'>Home</Link>
-        <Link to="/contact" className='nav-link'>FAQ</Link>
+        <Link to="/faq" className='nav-link'>FAQ</Link>
       </div>
     </header>
   );

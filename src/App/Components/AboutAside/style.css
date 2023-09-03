@@ -1,0 +1,104 @@
+.aside__photo {
+  max-width: 250px;
+  max-height: 300px;
+}
+
+.aside__icon {
+  width: 25px;
+  height: 25px;
+  vertical-align: text-top;
+}
+
+.aside__about-description {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 20px 0 20px;
+  cursor: default;
+}
+
+aside div {
+  font-size: 20px;
+  margin-bottom: 5px;
+  word-wrap: break-word;
+}
+
+aside {
+  margin-top: 1em;
+  position: fixed;
+  margin-left: 12em;
+  max-width: 500px;
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255, 0.835);
+  font-size: 15px;
+  text-align: center;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+@media (min-width: 1361px) {
+  aside {
+    height: 670px;
+  }
+}
+
+@media (max-width: 1360px) {
+  aside {
+    position: sticky;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    border-radius: 0;
+  }
+
+  .aside__about-description {
+    max-width: 50%;
+    margin: 0.5em auto;
+    overflow-wrap: break-word;
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 750px) {
+  .aside__about-description {
+    font-size: 17px;
+  }
+  aside div {
+    font-size: 15px;
+  }
+  .aside__icon {
+    width: 20px;
+    height: 20px;
+  }
+  .aside__photo {
+    max-width: 200px;
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 460px) {
+  .aside__about-description {
+    font-size: 12px;
+    max-width: 80%;
+  }
+
+  aside div {
+    font-size: 12px;
+  }
+
+  .aside__icon {
+    width: 15px;
+    height: 15px;
+  }
+  .aside__photo {
+    max-width: 100px;
+    max-height: 150px;
+  }
+}

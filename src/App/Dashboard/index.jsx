@@ -1,10 +1,9 @@
 import './styles.css';
 import DashboardCard from '../Components/DashboardCard/DashboardCard';
-import faq from '../Images/faq.svg';
-import edit from '../Images/tiles/edit.svg';
-import booksaved from '../Images/book-saved.svg';
-import code from '../Images/tiles/code.svg';
-import cv from '../Images/personalcard.svg';
+import edit from '../Images/dashboard-icons/edit.svg';
+import code from '../Images/dashboard-icons/code.svg';
+import cv from '../Images/dashboard-icons/personalcard.svg';
+import about from '../Images/dashboard-icons/about.png';
 import { useState } from 'react';
 
 export const Dashboard = () => {
@@ -39,9 +38,9 @@ export const Dashboard = () => {
 
     {
       sectionTitle: 'About',
-      icon: <img src={faq} alt="faq" />,
+      icon: <img src={about} alt="about" />,
       description: 'Here you can see who I am',
-      link: '/faq',
+      link: 'about',
     },
   ]);
 
@@ -67,28 +66,6 @@ export const Dashboard = () => {
           );
         })}
       </div>
-      {/* <aside>
-        <div className="profile-img">
-          <img className="img-placeholder" src={selfie} alt="selfie" />
-          <h2>
-            Krzysztof Truszkowski
-          </h2>
-          <p>
-            <img src={location} alt="location" /> Gdańsk
-          </p>
-          <p>
-            <a href="mailto:krzysztof.truszkowski@outlook.com">
-              <img src={email} alt="email" /> krzysztof.truszkowski@outlook.com
-            </a>
-          </p>
-          <p>
-            <a href="tel:533886489">
-              <img src={phone} alt="phone" /> 533886489
-            </a>
-          </p>
-        </div>
-      </aside> */}
-
     </div>
   );
 };
