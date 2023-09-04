@@ -26,13 +26,8 @@ footer {
   display: block;
 }
 
-.footer__info {
-  display: block;
-}
-
 .footer__info a {
   text-decoration: none;
-  color: var(--color-white);
   display: block;
   text-align: right;
 }

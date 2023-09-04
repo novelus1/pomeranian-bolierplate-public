@@ -1,8 +1,7 @@
 import React from 'react';
 import startItLogo from '../Images/start-it-logo.svg';
-import { Link } from 'react-router-dom';
-import './styles/header.css';
 import Navbar from '../Components/NavbarMenu/Navbar';
+import './styles/header.css';
 
 export function AppHeader() {
   return (
@@ -16,12 +15,7 @@ export function AppHeader() {
           <img src={startItLogo} className="logo" alt="logo" srcSet="" />
         </a>
       </div>
-      <div className="link-container">
-        {/* <Link to="/" className='nav-link'>Home</Link>
-        <Link to="/faq" className='nav-link'>FAQ</Link> */}
-        {/* {window.location.pathname !== '/dashboard' && (
-          <li><Link to="/other">Other</Link></li>
-        )} */}
+      <div className="navigation__menu">
         <Navbar />
       </div>
     </header>

@@ -11,8 +11,8 @@ export function AppFooter() {
                 Development Fund as part of the grant project 'Invest in Pomerania 2020.
             </div>
             <div className="footer__info">
-                <a href={`mailto:${email}`}>Email: {email}</a>
-                <a href={`tel:${phone}`}>Tel: {phone}</a>
+                <a href={`mailto:${email}`} style={{ color: "white" }}>Email: {email}</a>
+                <a href={`tel:${phone}`} style={{ color: "white" }}>Tel: {phone}</a>
             </div>
         </footer>
     );

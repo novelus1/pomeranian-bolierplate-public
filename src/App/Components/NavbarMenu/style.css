@@ -23,3 +23,44 @@
   cursor: pointer;
   outline: none;
 }
+.menu__arrow-icon {
+  vertical-align: top;
+}
+
+@media (max-width: 690px) {
+  nav {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu__container {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu__wrapper {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu__container button {
+    display: none;
+  }
+}
+
+@media (max-width: 285px) {
+  nav {
+    display: flex;
+  }
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu li {
+    display: block;
+    margin: 10px 0;
+  }
+}
