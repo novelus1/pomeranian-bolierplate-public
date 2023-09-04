@@ -1,0 +1,25 @@
+.menu__container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.menu li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.menu li:hover,
+.menu__container button:hover {
+  color: #ff4d69;
+  filter: invert(9%) sepia(99%) saturate(5630%) hue-rotate(340deg)
+    brightness(121%) contrast(148%);
+}
+
+.menu__container button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}

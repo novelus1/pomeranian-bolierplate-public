@@ -4,7 +4,6 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 import './style.css';
 
-
 export const AboutSections = () => {
     const [availableTexts] = useState([
         {
@@ -25,8 +24,9 @@ export const AboutSections = () => {
         {
             textTitle: 'Language Connection',
             textParagraph:
-                "My journey is uniquely shaped by my academic background in English Philology, which provides me with a deep appreciation for language, communication, and critical thinking. This foundation not only enhances my ability to craft clear and concise code but also elevates the user experience by ensuring that your web content resonates with your audience.",
-        }, {
+                'My journey is uniquely shaped by my academic background in English Philology, which provides me with a deep appreciation for language, communication, and critical thinking. This foundation not only enhances my ability to craft clear and concise code but also elevates the user experience by ensuring that your web content resonates with your audience.',
+        },
+        {
             textTitle: 'Continuous Learner',
             textParagraph:
                 "In the dynamic tech landscape, I'm committed to lifelong learning. I actively engage in online courses, workshops, and community events to stay at the forefront of emerging technologies, ensuring I deliver the best solutions to your projects.",
@@ -62,7 +62,9 @@ export const AboutSections = () => {
     }, [availableTexts]);
 
     useEffect(() => {
-        const anySectionExpanded = Object.values(expandedTexts).some((value) => value);
+        const anySectionExpanded = Object.values(expandedTexts).some(
+            (value) => value
+        );
         setIsAnySectionExpanded(anySectionExpanded);
 
         if (anySectionExpanded && !marginApplied) {
@@ -71,9 +73,15 @@ export const AboutSections = () => {
     }, [expandedTexts, marginApplied]);
 
     return (
-        <div className={`about__container ${isAnySectionExpanded ? 'expanded' : ''}`}>
+        <div
+            className={`about__container ${isAnySectionExpanded ? 'expanded' : ''}`}
+        >
             {availableTexts.map((text) => (
-                <div className={`about__text ${expandedTexts[text.textTitle] ? 'expanded' : ''}`} key={text.textTitle}>
+                <div
+                    className={`about__text ${expandedTexts[text.textTitle] ? 'expanded' : ''
+                        }`}
+                    key={text.textTitle}
+                >
                     <h1 onClick={() => toggleTextExpansion(text.textTitle)}>
                         {text.textTitle}
                         {expandedTexts[text.textTitle] ? (

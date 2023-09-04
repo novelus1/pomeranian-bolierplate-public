@@ -2,6 +2,7 @@ import React from 'react';
 import startItLogo from '../Images/start-it-logo.svg';
 import { Link } from 'react-router-dom';
 import './styles/header.css';
+import Navbar from '../Components/NavbarMenu/Navbar';
 
 export function AppHeader() {
   return (
@@ -16,8 +17,12 @@ export function AppHeader() {
         </a>
       </div>
       <div className="link-container">
-        <Link to="/" className='nav-link'>Home</Link>
-        <Link to="/faq" className='nav-link'>FAQ</Link>
+        {/* <Link to="/" className='nav-link'>Home</Link>
+        <Link to="/faq" className='nav-link'>FAQ</Link> */}
+        {/* {window.location.pathname !== '/dashboard' && (
+          <li><Link to="/other">Other</Link></li>
+        )} */}
+        <Navbar />
       </div>
     </header>
   );
