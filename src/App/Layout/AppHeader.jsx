@@ -1,5 +1,6 @@
 import React from 'react';
 import startItLogo from '../Images/start-it-logo.svg';
+import { Link } from 'react-router-dom';
 import Navbar from '../Components/NavbarMenu/Navbar';
 import './styles/header.css';
 
@@ -7,13 +8,9 @@ export function AppHeader() {
   return (
     <header className="navigation">
       <div>
-        <a
-          href="https://pomeranianstartit.pl"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link to="/dashboard">
           <img src={startItLogo} className="logo" alt="logo" srcSet="" />
-        </a>
+        </Link>
       </div>
       <div className="navigation__menu">
         <Navbar />

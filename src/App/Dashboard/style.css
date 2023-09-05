@@ -1,3 +1,7 @@
+.dashboard {
+  user-select: none;
+}
+
 .dashboard__card-set {
   display: flex;
   flex-flow: row wrap;

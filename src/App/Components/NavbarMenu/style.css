@@ -16,6 +16,11 @@
     brightness(121%) contrast(148%);
 }
 
+.menu__current-link.active {
+  font-weight: bold;
+  color: red;
+}
+
 .menu__container button {
   border: none;
   background: none;

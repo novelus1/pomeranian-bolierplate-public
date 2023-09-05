@@ -6,16 +6,20 @@ import AboutSections from '../Components/AboutSections/AboutSections';
 import './style.css';
 
 export function About() {
+
   return (
     <Routes>
       <Route path="" element={<AboutLayout />} />
     </Routes>
   );
 }
+
 function AboutLayout() {
   return (
     <div className='about__wrapper'>
-      <AboutAside />
+      <div>
+        <AboutAside />
+      </div>
       <AboutSections />
     </div>
   );

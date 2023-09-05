@@ -1,5 +1,7 @@
 .about__wrapper {
   display: flex;
+  justify-content: center;
+  gap: 2.5em;
 }
 
 @media (max-width: 1360px) {

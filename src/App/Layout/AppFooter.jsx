@@ -1,8 +1,10 @@
 import './styles/footer.css';
 import React from 'react';
+
+const email = 'krzysztof.truszkowski@outlook.com';
+const phone = '+48 533 886 489';
+
 export function AppFooter() {
-    const email = 'krzysztof.truszkowski@outlook.com';
-    const phone = '+48 533 886 489';
 
     return (
         <footer>
@@ -11,8 +13,8 @@ export function AppFooter() {
                 Development Fund as part of the grant project 'Invest in Pomerania 2020.
             </div>
             <div className="footer__info">
-                <a href={`mailto:${email}`} style={{ color: "white" }}>Email: {email}</a>
-                <a href={`tel:${phone}`} style={{ color: "white" }}>Tel: {phone}</a>
+                <a href={`mailto:${email}`} style={{ color: "white" }} target="_blank" rel="noopener noreferrer">Email: {email}</a>
+                <a href={`tel:${phone}`} style={{ color: "white" }} target="_blank" rel="noopener noreferrer">Tel: {phone}</a>
             </div>
         </footer>
     );

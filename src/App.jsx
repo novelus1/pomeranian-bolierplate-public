@@ -9,7 +9,7 @@ import { Dashboard } from './App/Dashboard';
 import { Exercises } from './App/Exercises';
 import { CV } from './App/Components/CV/CV';
 import { Blog } from './App/Blog/Blog';
-import { About } from './App/About';
+import { About } from './App/About/About';
 import { Techstack } from './App/Techstack';
 import CookieBanner from './App/Components/Cookies/Cookies';
 
