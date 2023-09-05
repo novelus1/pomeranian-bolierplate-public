@@ -46,6 +46,12 @@ a:visited {
   color: black;
 }
 
+@media (min-width: 1371px) {
+  aside {
+    height: 670px;
+  }
+}
+
 @media (max-width: 1370px) {
   .aside__about-description {
     overflow-wrap: break-word;
