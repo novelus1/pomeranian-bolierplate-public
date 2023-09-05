@@ -22,7 +22,7 @@ import slack from '../Images/techstack-icons/slack.png';
 import msteams from '../Images/techstack-icons/msteams.png';
 import mui from '../Images/techstack-icons/mui.png';
 
-import './styles.css';
+import './style.css';
 
 const availableCards = [
   {

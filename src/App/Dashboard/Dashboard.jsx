@@ -4,7 +4,7 @@ import code from '../Images/dashboard-icons/code.svg';
 import cv from '../Images/dashboard-icons/personalcard.svg';
 import about from '../Images/dashboard-icons/about.png';
 import { Link } from 'react-router-dom';
-import './style.css';
+import './styles.css';
 
 const availableCards = [
   {

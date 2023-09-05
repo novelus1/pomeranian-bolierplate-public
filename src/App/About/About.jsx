@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import AboutAside from '../Components/AboutAside/AboutAside';
 import AboutSections from '../Components/AboutSections/AboutSections';
 
-import './style.css';
+import './styles.css';
 
 export function About() {
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './style.css';
+import './styles.css';
 import Cookies from 'js-cookie';
 
 const CookieBanner = () => {

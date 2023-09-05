@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import './style.css';
+import './styles.css';
 
 const availableMenuOptions = [
     { menuOption: 'Home', route: '/dashboard' },

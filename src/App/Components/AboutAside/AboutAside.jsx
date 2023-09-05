@@ -4,7 +4,7 @@ import phone from '../../Images/about-icons/phone.svg';
 import email from '../../Images/about-icons/email.png';
 import linkedin from '../../Images/about-icons/linkedin.png';
 import github from '../../Images/about-icons/github.png';
-import './style.css';
+import './styles.css';
 
 const AboutAside = () => {
 
