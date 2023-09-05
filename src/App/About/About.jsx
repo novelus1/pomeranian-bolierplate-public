@@ -17,7 +17,7 @@ export function About() {
 function AboutLayout() {
   return (
     <div className='about__wrapper'>
-      <div>
+      <div className='about__aside-container'>
         <AboutAside />
       </div>
       <AboutSections />

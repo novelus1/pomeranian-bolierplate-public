@@ -17,7 +17,7 @@
   align-items: flex-start;
 }
 
-@media (max-width: 690px) {
+@media (max-width: 765px) {
   .navigation img {
     display: none;
   }

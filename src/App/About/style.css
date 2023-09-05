@@ -1,12 +1,19 @@
 .about__wrapper {
   display: flex;
   justify-content: center;
-  gap: 2.5em;
+  gap: 5em;
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 1370px) {
   .about__wrapper {
     flex-direction: column;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 765px) {
+  .about__wrapper {
+    gap: 2em;
   }
 }
