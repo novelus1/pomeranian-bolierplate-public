@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { ArrowDropDown } from '@mui/icons-material';
 import { ArrowDropUp } from '@mui/icons-material';
-import TechstackCard from '../Components/TechstackCard/TechstackCard';
+import TechstackCard from '../Components/SectionComponents/TechstackCard/TechstackCard';
 import css from '../Images/techstack-icons/css.svg';
 import discord from '../Images/techstack-icons/discord.png';
 import firebase from '../Images/techstack-icons/firebase.svg';
@@ -22,7 +22,7 @@ import slack from '../Images/techstack-icons/slack.png';
 import msteams from '../Images/techstack-icons/msteams.png';
 import mui from '../Images/techstack-icons/mui.png';
 
-import './style.css';
+import './Techstack.css';
 
 const availableCards = [
   {

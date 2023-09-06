@@ -1,5 +1,4 @@
-import './styles/footer.css';
-import React from 'react';
+import './styles/AppFooter.css';
 
 const email = 'krzysztof.truszkowski@outlook.com';
 const phone = '+48 533 886 489';

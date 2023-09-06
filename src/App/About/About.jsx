@@ -1,9 +1,8 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import AboutAside from '../Components/AboutAside/AboutAside';
-import AboutSections from '../Components/AboutSections/AboutSections';
+import AboutAside from '../Components/SectionComponents/AboutAside/AboutAside';
+import AboutSections from '../Components/SectionComponents/AboutSections/AboutSections';
 
-import './styles.css';
+import './About.css';
 
 export function About() {
 

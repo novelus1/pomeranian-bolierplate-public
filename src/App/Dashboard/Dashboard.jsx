@@ -1,10 +1,10 @@
-import DashboardCard from '../Components/DashboardCard/DashboardCard';
+import DashboardCard from '../Components/SectionComponents/DashboardCard/DashboardCard';
 import edit from '../Images/dashboard-icons/edit.svg';
 import code from '../Images/dashboard-icons/code.svg';
 import cv from '../Images/dashboard-icons/personalcard.svg';
 import about from '../Images/dashboard-icons/about.png';
 import { Link } from 'react-router-dom';
-import './styles.css';
+import './Dashboard.css';
 
 const availableCards = [
   {
@@ -18,16 +18,8 @@ const availableCards = [
     sectionTitle: 'Projects',
     icon: <img src={edit} alt="exercise resume" />,
     description: 'My projects and exercises',
-    link: '/exercises',
+    link: '/projects',
   },
-
-  // {
-  //   sectionTitle: 'Blog',
-  //   icon: <img src={booksaved} alt="blog resume" />,
-  //   description: 'wpisy blogowe o technologii front-end',
-  //   link: '/blog',
-  // },
-
   {
     sectionTitle: 'Tech stack',
     icon: <img src={code} alt="tech stack resume" />,
