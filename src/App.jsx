@@ -8,7 +8,8 @@ import { CV } from './App/CV/CV';
 import { About } from './App/About/About';
 import { Techstack } from './App/Techstack/Techstack';
 import { Projects } from './App/Projects/Projects';
-import CookieBanner from './App/Components/SectionComponents/Cookies/Cookies';
+import CookieBanner from './App/Components/SectionComponents/Cookies/Cookies'
+import { HitTheMoleGame } from './App/Components/ProjectComponents/MoleGame/HitTheMoleGame';
 
 export function App() {
   return (
@@ -18,10 +19,11 @@ export function App() {
           <Route index element={<Navigate to="dashboard" />} />
           <Route path="dashboard/*" element={<Dashboard />} />
           <Route path="cv/*" element={<CV />} />
-          <Route path="projects/*" element={<Projects />} />
           <Route path="about/*" element={<About />} />
           <Route path="tech/*" element={<Techstack />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="projects/*" element={<Projects />} />
+          <Route path="/projects/hit-the-mole" element={<HitTheMoleGame />} />
         </Route>
       </Routes>
       <CookieBanner />

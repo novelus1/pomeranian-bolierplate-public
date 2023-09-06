@@ -1,38 +1,37 @@
 import React from 'react';
 import Mole from '../../../Images/Mole.svg';
 import formatTime from './Time';
-import './styles.css'
 
 export const MoleGameBoard = ({
   scoreCount,
   moleArray,
-  gameStarted,
   hitTheMole,
+  gameStarted,
   timer,
   restartGame,
 }) => {
   if (gameStarted) {
     return (
-      <div className='mole-game__board-wrapper'>
-        <div >
-          <div >
-            <h4>Time Left</h4>
-            <div className="mole-game__time">{formatTime(timer)}</div>
+      <div className="moleGame">
+        <div className="game-info">
+          <div className="time">
+            <h4 className="game-text">Time Left</h4>
+            <div className="timeAndScore">{formatTime(timer)}</div>
           </div>
-          <div>
-            <h4>Score </h4>
-            <div className='mole-game__score'>{`${scoreCount}`}</div>
+          <div className="score">
+            <h4 className="game-text">Score</h4>
+            <div className="timeAndScore">{`${scoreCount}`}</div>
           </div>
-          <div>
-            <h4>Controls</h4>
-            <button onClick={restartGame} className="mole-game__restart-button">
+          <div className="restart">
+            <h4 className="game-text">Controls</h4>
+            <button onClick={restartGame} className="restartButton">
               Restart
             </button>
           </div>
         </div>
-        <div className="mole-game__board">
+        <div className="board">
           {moleArray.map((mole, index) => (
-            <div className="mole-game__field" key={index}>
+            <div className="square" key={index}>
               <span>
                 {mole.isVisible ? (
                   <img
@@ -48,7 +47,6 @@ export const MoleGameBoard = ({
       </div>
     );
   }
-}
-
+};
 
 export default MoleGameBoard;

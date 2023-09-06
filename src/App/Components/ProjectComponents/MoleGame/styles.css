@@ -1,20 +1,14 @@
-.mole-game__wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.victory {
+  text-align: center;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 48px;
 }
 
-.mole-game__info-wrapper {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-}
-
-.mole-game__option-wrapper {
-  justify-content: center;
-  align-items: center;
+.gameOptionsButtons {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -24,33 +18,23 @@
   grid-template-columns: 2fr 4fr;
 }
 
-.mole-game__finish {
-  text-align: center;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 48px;
-}
-
-.mole-game__buttons {
+.gameButtonsRows {
   grid-area: 1 / 1 / 5 / 5;
 }
 
-.mole-game__buttons div {
+.gameButtonsRows div {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
 
-.mole-game__buttons h4,
-.mole-game__buttons button {
+.gameButtonsRows h4,
+.gameButtonsRows button {
   width: 15rem;
-  margin: 0;
-  padding: 0.5rem 2.2rem;
 }
 
-.mole-game__buttons button {
+.gameButtonsRows button {
   padding: 1.25rem 2.2rem 1.25rem 2.2rem;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -67,27 +51,29 @@
   cursor: pointer;
 }
 
-.mole-game__buttons button:hover,
-.mole-game__buttons button.activeButton {
+.gameButtonsRows button:hover,
+.gameButtonsRows button.activeButton {
   background: #fe3756;
   border-color: #fe3756;
 }
 
-.mole-game__buttons button:active {
+.gameButtonsRows button:active {
   background: #fe3756;
   border-color: #fe3756;
 }
 
-.mole-game__board {
+.moleGame .board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 5px;
   max-width: 500px;
+  height: 200px;
   margin: auto;
+  margin-top: 30px;
 }
 
-.mole-game__field {
+.moleGame .board .square {
   display: flex;
   border-radius: 8px;
   background-color: #ebebeb;
@@ -95,24 +81,24 @@
   align-items: center;
 }
 
-.mole-game__time,
-.mole-game__score,
-.mole-game__restart-button {
+.timeAndScore {
   padding: 1.25rem 2.2rem 1.25rem 2.2rem;
+  margin: 1rem;
   border-radius: 0.5rem;
   border-color: #ebebeb;
   border: 1px;
+  gap: 1rem;
   background: #ebebeb;
   font-size: 22px;
   font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0em;
   text-align: center;
   color: rgb(0, 0, 0);
-  width: 8em;
-  height: 3em;
-  margin-bottom: 2em;
+  width: 15rem;
 }
 
-/* .mole-game__restart-button {
+.restartButton {
   padding: 1.25rem 2.2rem 1.25rem 2.2rem;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -126,5 +112,32 @@
   letter-spacing: 0em;
   text-align: center;
   color: white;
+  width: 15rem;
   cursor: pointer;
-} */
+}
+
+.moleGameOptions .game-text,
+.moleGame .game-text {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px;
+}
+
+.time .game-text,
+.score .game-text,
+.restart .game-text {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.time,
+.score,
+.restart {
+  display: flex;
+  align-items: center;
+}

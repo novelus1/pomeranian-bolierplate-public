@@ -1,5 +1,3 @@
-import './styles.css'
-
 export const MoleGameSettings = ({
   gameTime,
   setGameTime,
@@ -24,31 +22,32 @@ export const MoleGameSettings = ({
 
   if (!gameStarted) {
     return (
-      <div className="mole-game__wrapper">
-        {/* <p className="mole-game__instructions">
-          A game involving hitting a mole on the square where it appears.
+      <div className="moleGameOptions">
+        {/* <p className="instructions">
+          Gra polegająca na podążaniu za krecikiem i trafieniu na kwadrat, w
+          którym się pojawił.
         </p> */}
         <div>
           {scoreCount > 0 && winTime && (
             <h2>
-              <p className="mole-game__finish">
+              <p className="victory">
                 Gratulacje! Twój wynik to {scoreCount} złapane krety w{' '}
                 {winTime >= 60
                   ? `${Math.floor(winTime / 60)} ${winTime >= 120 ? 'minuty' : 'minutę'
                   }`
-                  : winTime < 5
-                    ? `${winTime} sekundy`
-                    : `${winTime} sekund`}
+                  : winTime > 1
+                    ? `${winTime} seceonds`
+                    : `${winTime} second`}
                 !
               </p>
             </h2>
           )}
         </div>
 
-        <div className="mole-game__option-wrapper">
-          <div className="mole-game__buttons">
+        <div className="gameOptionsButtons">
+          <div className="gameButtonsRows">
             <div>
-              <h4>Game Time</h4>
+              <h4 className="game-text">Game Time</h4>
               {gameTimeOption.map(({ label, timeValue }) => (
                 <button
                   className={gameTime === timeValue ? 'activeButton' : ''}
@@ -61,7 +60,7 @@ export const MoleGameSettings = ({
               ))}
             </div>
             <div>
-              <h4>Mole Count</h4>
+              <h4 className="game-text">Mole Count</h4>
               {moleCountOption.map(({ label }) => (
                 <button
                   className={
@@ -74,7 +73,7 @@ export const MoleGameSettings = ({
               ))}
             </div>
             <div>
-              <h4>Controls</h4>
+              <h4 className="game-text">Controls</h4>
               <button onClick={startGame}>Start</button>
             </div>
           </div>

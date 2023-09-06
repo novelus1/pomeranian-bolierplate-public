@@ -7,7 +7,7 @@ export const Projects = () => {
     {
       sectionTitle: 'Hit The Mole',
       description: 'A game about hitting moles!',
-      link: '/hit-the-mole',
+      link: '/projects/hit-the-mole',
     },
 
     {

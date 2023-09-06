@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MoleGameSettings from './Settings.jsx';
+import './styles.css';
 import MoleGameBoard from './Board';
 import formatTime from './Time.jsx';
-import './styles.css';
 
 export const HitTheMoleGame = () => {
   const defaultGameTime = 1 * 60 * 1000;
@@ -141,4 +141,3 @@ export const HitTheMoleGame = () => {
     </>
   );
 };
-
