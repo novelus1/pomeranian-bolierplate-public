@@ -55,7 +55,7 @@ export const HitTheMoleGame = () => {
   }, [gameStarted]);
 
   useEffect(() => {
-    if (gameStarted && scoreCount === 10) {
+    if (gameStarted && scoreCount === 20) {
       setTimer(gameTime);
       setGameStarted(false);
       setWinTime(gameTime - timer);
@@ -130,19 +130,15 @@ export const HitTheMoleGame = () => {
         formatTime={formatTime}
         winTime={winTime}
       />
-      {gameStarted ? (
-        <MoleGameBoard
-          moleArray={moleArray}
-          hitTheMole={hitTheMole}
-          scoreCount={scoreCount}
-          gameStarted={gameStarted}
-          timer={timer}
-          restartGame={restartGame}
-        />
-      ) : null}
+      <MoleGameBoard
+        moleArray={moleArray}
+        hitTheMole={hitTheMole}
+        scoreCount={scoreCount}
+        gameStarted={gameStarted}
+        timer={timer}
+        restartGame={restartGame}
+      />
     </>
   );
 };
 
-
-export default HitTheMoleGame;

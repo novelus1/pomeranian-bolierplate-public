@@ -1,3 +1,5 @@
+import './styles.css'
+
 export const MoleGameSettings = ({
   gameTime,
   setGameTime,
@@ -30,17 +32,14 @@ export const MoleGameSettings = ({
           {scoreCount > 0 && winTime && (
             <h2>
               <p className="mole-game__finish">
-                {scoreCount === 0 && winTime === 0
-                  ? 'You have caught 0 moles, you lost!'
-                  : `Congratulations! You have caught ${scoreCount} mole${scoreCount !== 1 ? 's' : ''
-                  } ${winTime >= 60
-                    ? `${Math.floor(winTime / 60)} minute${Math.floor(winTime / 60) !== 1 ? 's' : ''
-                    } and ${winTime % 60} second${winTime % 60 !== 1 ? 's' : ''
-                    }`
-                    : winTime === 1
-                      ? `${winTime} second`
-                      : `${winTime} seconds`
-                  }!`}
+                Gratulacje! Twój wynik to {scoreCount} złapane krety w{' '}
+                {winTime >= 60
+                  ? `${Math.floor(winTime / 60)} ${winTime >= 120 ? 'minuty' : 'minutę'
+                  }`
+                  : winTime < 5
+                    ? `${winTime} sekundy`
+                    : `${winTime} sekund`}
+                !
               </p>
             </h2>
           )}
