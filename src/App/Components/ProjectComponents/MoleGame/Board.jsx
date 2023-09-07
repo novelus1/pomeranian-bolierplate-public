@@ -14,15 +14,15 @@ export const MoleGameBoard = ({
     return (
       <div className="mole-game__board-wrapper">
         <div className="mole-game__board-info">
-          <div>
+          <div className="mole-game__timer-wrapper">
             <h4>Time Left</h4>
             <div className="mole-game__timer">{formatTime(timer)}</div>
           </div>
-          <div>
+          <div className="mole-game__score-wrapper">
             <h4>Score</h4>
             <div className="mole-game__score">{`${scoreCount}`}</div>
           </div>
-          <div>
+          <div className="mole-game__controls-wrapper">
             <h4>Controls</h4>
             <button onClick={restartGame} className="mole-game__restart-button">
               Restart

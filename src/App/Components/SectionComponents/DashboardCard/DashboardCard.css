@@ -66,3 +66,10 @@
     width: 45px;
   }
 }
+
+@media (max-width: 230px) {
+  .dashboard-card {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

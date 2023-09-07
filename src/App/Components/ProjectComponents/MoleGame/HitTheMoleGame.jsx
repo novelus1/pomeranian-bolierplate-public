@@ -5,19 +5,21 @@ import formatTime from './Time.jsx';
 import whackSound from '../../../Sounds/mole-game/whack.mp3';
 import victorySound from '../../../Sounds/mole-game/victory.mp3'
 import './styles.css';
+
+const defaultGameTime = 1 * 60 * 1000;
+const moleSpeed = 1000;
+const defaultArrayState = Array(10).fill({
+  isVisible: false,
+  isWhacked: false,
+});
+
 export const HitTheMoleGame = () => {
 
-  const defaultGameTime = 1 * 60 * 1000;
   const [gameTime, setGameTime] = useState(defaultGameTime / 1000);
   const [timer, setTimer] = useState(gameTime);
-  const defaultArrayState = Array(10).fill({
-    isVisible: false,
-    isWhacked: false,
-  });
   const [gameStarted, setGameStarted] = useState(false);
   const [moleArray, setMoleArray] = useState(defaultArrayState);
   const [moleCount, setMoleCount] = useState(1);
-  const moleSpeed = 1000;
   const [scoreCount, setScoreCount] = useState(0);
   const [winTime, setWinTime] = useState(null);
   const [whackAudio] = useState(new Audio(whackSound));

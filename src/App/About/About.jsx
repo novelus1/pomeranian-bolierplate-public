@@ -19,7 +19,9 @@ function AboutLayout() {
       <div className='about__aside-container'>
         <AboutAside />
       </div>
-      <AboutSections />
+      <div className='about__about-container'>
+        <AboutSections />
+      </div>
     </div>
   );
 }

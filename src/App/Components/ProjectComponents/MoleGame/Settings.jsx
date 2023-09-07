@@ -33,8 +33,8 @@ const MoleGameSettings = ({
 
   if (!gameStarted) {
     return (
-      <div className="mole-game__settings-wrapper">
-        <div>
+      <div>
+        <div className="mole-game__settings-wrapper">
           {scoreCount !== null && winTime !== null ? (
             <h2>
               <p className="mole-game__result">
@@ -63,7 +63,7 @@ const MoleGameSettings = ({
         </div>
         <div className="mole-game__options">
           <div className="mole-game__options-ui">
-            <div>
+            <div className="mole-game__time-section">
               <h4>Game Time</h4>
               {gameTimeOption.map(({ label, timeValue }) => (
                 <button
@@ -77,7 +77,7 @@ const MoleGameSettings = ({
                 </button>
               ))}
             </div>
-            <div>
+            <div className="mole-game__count-section">
               <h4>Mole Count</h4>
               {moleCountOption.map(({ label }) => (
                 <button
@@ -91,13 +91,12 @@ const MoleGameSettings = ({
                 </button>
               ))}
             </div>
-            <div>
+            <div className="mole-game__control-section">
               <h4>Controls</h4>
               <button onClick={startGame}>Start</button>
             </div>
           </div>
         </div>
-
       </div>
     );
   }

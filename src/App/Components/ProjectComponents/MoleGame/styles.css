@@ -7,29 +7,33 @@
   font-size: 28px;
 }
 
+.mole-game__options-ui {
+  margin-top: 2.5em;
+}
+
 .mole-game__options-ui div {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  user-select: none;
 }
 
 .mole-game__options-ui button {
   padding: 1.25rem 2.2rem 1.25rem 2.2rem;
-  margin: 1rem;
+  margin: 0.5em;
   border-radius: 0.5rem;
   border-color: #23213d;
-  border: 1px;
-  gap: 1rem;
   background: #23213d;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 31px;
   letter-spacing: 0em;
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
+  width: 10em;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
-  width: 15rem;
+  user-select: none;
 }
 
 .mole-game__options-ui button:hover,
@@ -39,6 +43,10 @@
   border-color: #fe3756;
 }
 
+.mole-game__control-section {
+  gap: 1.65em;
+}
+
 .mole-game__board-ui {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -46,7 +54,6 @@
   max-width: 900px;
   margin: auto;
   margin-top: 30px;
-  height: 400px;
   background-image: url('../../../Images/mole-game/grass.png');
   gap: 1em;
   background-size: cover;
@@ -63,29 +70,24 @@
   background-image: url('../../../Images/mole-game/molehole.png');
   background-repeat: no-repeat;
   background-position: center center;
-}
-
-.mole-game__board-ui img {
-  margin-top: -1em;
+  height: 160px;
 }
 
 .mole-game__timer,
 .mole-game__score,
 .mole-game__restart-button {
   padding: 1.25rem 2.2rem 1.25rem 2.2rem;
-  margin: 1rem;
+  margin: 0.5em;
   border-radius: 0.5rem;
   border-color: #ebebeb;
-  border: 1px;
-  gap: 1rem;
   background: #ebebeb;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 31px;
   letter-spacing: 0em;
   text-align: center;
   color: rgb(0, 0, 0);
-  width: 15rem;
+  width: 7em;
   display: flex;
   justify-content: center;
 }
@@ -101,21 +103,15 @@
 .mole-game__board-wrapper h4,
 .mole-game__options h4 {
   font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 34px;
   font-weight: bold;
   text-align: center;
 }
 .mole-game__settings-wrapper h4 {
-  width: 200px;
+  max-width: 200px;
 }
 
 .mole-game__settings-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5em;
   user-select: none;
 }
 
@@ -130,17 +126,96 @@
   grid-area: 1 / 1 / 5 / 5;
 } */
 
-@media (max-width: 1050px) {
+@media (max-width: 830px) {
   .mole-game__options-ui button {
     font-size: 16px;
-    padding: 1rem;
   }
-
+  .mole-game__result {
+    font-size: 22px;
+  }
   .mole-game__board-ui {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    max-width: 95%;
   }
 
+  .mole-game__board-info {
+    width: 300px;
+    margin: 0 auto;
+  }
   img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .mole-game__board-ui {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    margin-bottom: 2em;
+  }
+}
+
+@media (max-width: 640px) {
+  .mole-game__options-ui button {
+    font-size: 12px;
+    width: 12em;
+  }
+}
+
+@media (max-width: 575px) {
+  .mole-game__time-section h4,
+  .mole-game__count-section h4,
+  .mole-game__control-section h4 {
+    display: none;
+  }
+
+  .mole-game__options-ui button {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 550px) {
+  .mole-game__board-info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 430px) {
+  .mole-game__options {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    width: 5em;
+    margin: 0 auto;
+  }
+
+  .mole-game__options-ui button {
+    width: 50%;
+  }
+}
+
+@media (max-width: 335px) {
+  .mole-game__board-ui {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 250px) {
+  .mole-game__time-section,
+  .mole-game__count-section,
+  .mole-game__control-section {
+    flex-direction: column;
+  }
+  .mole-game__result {
+    font-size: 18px;
+    width: 80%;
+    margin: 0 auto;
+    word-wrap: break-word;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 }

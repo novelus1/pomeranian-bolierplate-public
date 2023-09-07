@@ -4,6 +4,16 @@
   gap: 5em;
 }
 
+.about__aside-container {
+  width: 600px;
+  max-width: 95%;
+}
+
+.about__about-container {
+  width: 600px;
+  max-width: 95%;
+}
+
 @media (max-width: 1370px) {
   .about__wrapper {
     flex-direction: column;
@@ -15,5 +25,11 @@
 @media (max-width: 765px) {
   .about__wrapper {
     gap: 2em;
+  }
+}
+
+@media (max-width: 155px) {
+  body {
+    overflow-x: hidden;
   }
 }
