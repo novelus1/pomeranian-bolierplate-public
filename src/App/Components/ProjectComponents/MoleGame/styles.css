@@ -46,7 +46,7 @@
   max-width: 900px;
   margin: auto;
   margin-top: 30px;
-  max-height: 400px;
+  height: 400px;
   background-image: url('../../../Images/mole-game/grass.png');
   gap: 1em;
   background-size: cover;
