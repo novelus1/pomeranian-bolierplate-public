@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import MoleGameSettings from './Settings.jsx';
-import './styles.css';
 import MoleGameBoard from './Board';
 import formatTime from './Time.jsx';
-
+import whackSound from '../../../Sounds/mole-game/whack.mp3';
+import victorySound from '../../../Sounds/mole-game/victory.mp3'
+import './styles.css';
 export const HitTheMoleGame = () => {
+
   const defaultGameTime = 1 * 60 * 1000;
   const [gameTime, setGameTime] = useState(defaultGameTime / 1000);
   const [timer, setTimer] = useState(gameTime);
@@ -18,7 +20,10 @@ export const HitTheMoleGame = () => {
   const moleSpeed = 1000;
   const [scoreCount, setScoreCount] = useState(0);
   const [winTime, setWinTime] = useState(null);
-
+  const [whackAudio] = useState(new Audio(whackSound));
+  whackAudio.preload = 'auto';
+  const [victoryAudio] = useState(new Audio(victorySound));
+  victoryAudio.preload = 'auto';
   useEffect(() => {
     setMoleArray(defaultArrayState);
   }, [moleCount]);
@@ -55,10 +60,14 @@ export const HitTheMoleGame = () => {
   }, [gameStarted]);
 
   useEffect(() => {
-    if (gameStarted && scoreCount === 20) {
+    if (gameStarted && scoreCount === 10) {
       setTimer(gameTime);
       setGameStarted(false);
       setWinTime(gameTime - timer);
+
+      victoryAudio.currentTime = 0;
+      victoryAudio.play();
+
     }
   }, [scoreCount, gameStarted, gameTime, timer]);
 
@@ -66,11 +75,12 @@ export const HitTheMoleGame = () => {
     if (moleArray[index].isVisible) {
       setScoreCount((prevScore) => prevScore + 1);
 
+      whackAudio.currentTime = 0;
+      whackAudio.play();
+
       setMoleArray((prevVal) => {
         const newArray = [...prevVal];
-
         newArray[index].isVisible = false;
-
         return newArray;
       });
     }

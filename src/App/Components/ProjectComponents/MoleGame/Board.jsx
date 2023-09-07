@@ -1,5 +1,5 @@
 import React from 'react';
-import Mole from '../../../Images/Mole.svg';
+import Mole from '../../../Images/mole-game/mole.png';
 import formatTime from './Time';
 
 export const MoleGameBoard = ({
@@ -12,26 +12,26 @@ export const MoleGameBoard = ({
 }) => {
   if (gameStarted) {
     return (
-      <div className="moleGame">
-        <div className="game-info">
-          <div className="time">
-            <h4 className="game-text">Time Left</h4>
-            <div className="timeAndScore">{formatTime(timer)}</div>
+      <div className="mole-game__board-wrapper">
+        <div className="mole-game__board-info">
+          <div>
+            <h4>Time Left</h4>
+            <div className="mole-game__timer">{formatTime(timer)}</div>
           </div>
-          <div className="score">
-            <h4 className="game-text">Score</h4>
-            <div className="timeAndScore">{`${scoreCount}`}</div>
+          <div>
+            <h4>Score</h4>
+            <div className="mole-game__score">{`${scoreCount}`}</div>
           </div>
-          <div className="restart">
-            <h4 className="game-text">Controls</h4>
-            <button onClick={restartGame} className="restartButton">
+          <div>
+            <h4>Controls</h4>
+            <button onClick={restartGame} className="mole-game__restart-button">
               Restart
             </button>
           </div>
         </div>
-        <div className="board">
+        <div className="mole-game__board-ui">
           {moleArray.map((mole, index) => (
-            <div className="square" key={index}>
+            <div className="mole-game__board-ui-square" key={index}>
               <span>
                 {mole.isVisible ? (
                   <img

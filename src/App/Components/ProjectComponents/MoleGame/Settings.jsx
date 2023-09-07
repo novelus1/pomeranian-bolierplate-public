@@ -1,4 +1,7 @@
-export const MoleGameSettings = ({
+import React, { useEffect } from 'react';
+import Confetti from 'canvas-confetti';
+
+const MoleGameSettings = ({
   gameTime,
   setGameTime,
   winTime,
@@ -19,68 +22,85 @@ export const MoleGameSettings = ({
     { label: '2 moles' },
     { label: '3 moles' },
   ];
+  useEffect(() => {
+    if (scoreCount > 0 && winTime !== null && !gameStarted) {
+      Confetti({
+        particleCount: 100,
+        spread: 70,
+      });
+    }
+  }, [scoreCount, winTime, gameStarted]);
 
   if (!gameStarted) {
     return (
-      <div className="moleGameOptions">
-        {/* <p className="instructions">
-          Gra polegająca na podążaniu za krecikiem i trafieniu na kwadrat, w
-          którym się pojawił.
-        </p> */}
-        <div>
-          {scoreCount > 0 && winTime && (
-            <h2>
-              <p className="victory">
-                Gratulacje! Twój wynik to {scoreCount} złapane krety w{' '}
-                {winTime >= 60
-                  ? `${Math.floor(winTime / 60)} ${winTime >= 120 ? 'minuty' : 'minutę'
-                  }`
-                  : winTime > 1
-                    ? `${winTime} seceonds`
-                    : `${winTime} second`}
-                !
-              </p>
-            </h2>
-          )}
-        </div>
+      <div>
+        <div className="mole-game__settings-wrapper">
+          <div>
+            <div>
+              {(scoreCount !== null && winTime !== null) ? (
+                <h2>
+                  <p className="mole-game__result">
+                    {scoreCount > 0 ? (
+                      <>
+                        <p>Congratulations! You have caught {scoreCount} moles in {winTime >= 60
+                          ? `${Math.floor(winTime / 60)} ${winTime >= 120 ? 'minutes' : 'minute'
+                          } ${winTime % 60 !== 0 ? `${winTime % 60} seconds` : ''}`
+                          : winTime > 1
+                            ? `${winTime} seconds`
+                            : `${winTime} second`
+                        }!</p>
+                      </>
+                    ) : (
+                      'Try again!'
+                    )}
+                  </p>
+                </h2>
+              ) : null}
+            </div>
 
-        <div className="gameOptionsButtons">
-          <div className="gameButtonsRows">
-            <div>
-              <h4 className="game-text">Game Time</h4>
-              {gameTimeOption.map(({ label, timeValue }) => (
-                <button
-                  className={gameTime === timeValue ? 'activeButton' : ''}
-                  onClick={() => {
-                    setGameTime(timeValue);
-                  }}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-            <div>
-              <h4 className="game-text">Mole Count</h4>
-              {moleCountOption.map(({ label }) => (
-                <button
-                  className={
-                    moleCount === Number(label[0]) ? 'activeButton' : ''
-                  }
-                  onClick={() => setMoleCount(Number(label[0]))}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-            <div>
-              <h4 className="game-text">Controls</h4>
-              <button onClick={startGame}>Start</button>
+            <div className="mole-game__options">
+              <div className="mole-game__options-ui">
+                <div>
+                  <h4>Game Time</h4>
+                  {gameTimeOption.map(({ label, timeValue }) => (
+                    <button
+                      className={gameTime === timeValue ? 'activeButton' : ''}
+                      onClick={() => {
+                        setGameTime(timeValue);
+                      }}
+                      key={timeValue}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+                <div>
+                  <h4>Mole Count</h4>
+                  {moleCountOption.map(({ label }) => (
+                    <button
+                      className={
+                        moleCount === Number(label[0]) ? 'activeButton' : ''
+                      }
+                      onClick={() => setMoleCount(Number(label[0]))}
+                      key={label}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+                <div>
+                  <h4>Controls</h4>
+                  <button onClick={startGame}>Start</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     );
   }
+
+  return null;
 };
 
 export default MoleGameSettings;
