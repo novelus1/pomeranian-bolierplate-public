@@ -37,18 +37,24 @@ const MoleGameSettings = ({
         <div className="mole-game__settings-wrapper">
           <div>
             <div>
-              {(scoreCount !== null && winTime !== null) ? (
+              {scoreCount !== null && winTime !== null ? (
                 <h2>
                   <p className="mole-game__result">
                     {scoreCount > 0 ? (
                       <>
-                        <p>Congratulations! You have caught {scoreCount} moles in {winTime >= 60
-                          ? `${Math.floor(winTime / 60)} ${winTime >= 120 ? 'minutes' : 'minute'
-                          } ${winTime % 60 !== 0 ? `${winTime % 60} seconds` : ''}`
-                          : winTime > 1
-                            ? `${winTime} seconds`
-                            : `${winTime} second`
-                        }!</p>
+                        <p>
+                          Congratulations! You have caught {scoreCount} moles in{' '}
+                          {winTime >= 60
+                            ? `${Math.floor(winTime / 60)} ${winTime >= 120 ? 'minutes' : 'minute'
+                            } ${winTime % 60 !== 0
+                              ? `${winTime % 60} seconds`
+                              : ''
+                            }`
+                            : winTime > 1
+                              ? `${winTime} seconds`
+                              : `${winTime} second`}
+                          !
+                        </p>
                       </>
                     ) : (
                       'Try again!'
@@ -57,7 +63,6 @@ const MoleGameSettings = ({
                 </h2>
               ) : null}
             </div>
-
             <div className="mole-game__options">
               <div className="mole-game__options-ui">
                 <div>
