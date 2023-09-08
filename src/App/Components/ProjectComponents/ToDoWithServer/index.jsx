@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import './style.css';
 import { TodoItem } from './TodoItem/TodoItem';
 import { TodoForm } from './TodoForm/TodoForm';
+import { TodoListManagerInstance } from './TodoForm/TodoForm';
 
-export const BASE_API_URL = 'http://localhost:3333/api';
-const TIMEOUT_DURATION = 5000; //5sec czekania na odpoiedź serwera
+
 
 export function TodoList() {
   const [todoList, setTodoList] = useState([]);
   const [error, setError] = useState([]);
   const [isFormVisible, setFormVisibility] = useState(false);
-
   const [idForEdit, setIdForEdit] = useState(null);
+
 
   function updateTodoList(updatedTodo) {
     setTodoList(
@@ -33,7 +32,7 @@ export function TodoList() {
     const urlSuffix = isGetSpecificTodoMode ? `/${givenId}` : '';
 
     try {
-      const fetchDataPromise = axios.get(`${BASE_API_URL}/todo${urlSuffix}`);
+      // const fetchDataPromise = axios.get(`${BASE_API_URL}/todo${urlSuffix}`);
       const timeOutPromise = new Promise((_, reject) => {
         setTimeout(
           () => reject(new Error('Response Timeout')),
@@ -58,15 +57,17 @@ export function TodoList() {
     }
   };
 
-  useEffect(() => {
-    handleFetchTodoData();
-  }, []);
+
 
   return (
     <div className="todo-container">
       <h2 className="todo-container__title">Todo List 2</h2>
 
       {error && <p>{error}</p>}
+
+      {TodoListManagerInstance.getTodoList().map(item => {
+        return <div>{item.title}</div>
+      })}
 
       {isFormVisible && (
         <TodoForm

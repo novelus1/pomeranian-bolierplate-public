@@ -244,9 +244,9 @@ export function Form() {
                             <FieldSection title="Additional comments">
                                 <textarea
                                     name="details"
-                                    cols="22"
-                                    rows="5"
-                                    style={{ resize: 'none', maxWidth: "90%", border: "1px solid #ccc", borderRadius: "0.3em" }}
+                                    cols="25"
+                                    rows="4"
+                                    className='input__additional-comments'
                                     value={formData.details}
                                     onChange={(event) => {
                                         const newValue = event.target.value;

@@ -1,7 +1,65 @@
 import { useState } from 'react';
 import './TodoForm.css';
-import { BASE_API_URL } from '../index';
-import axios from 'axios';
+
+
+class LocalStorageManager {
+  get(itemKey) {
+    return JSON.parse(localStorage.getItem(itemKey))
+  }
+  add(itemKey, item) {
+    localStorage.setItem(itemKey, JSON.stringify([...this.get(itemKey), item]))
+  }
+
+  set(itemKey, item) {
+    localStorage.setItem(itemKey, item)
+
+  }
+
+}
+
+class TodoListManager extends LocalStorageManager {
+  ITEM_KEY = 'todos'
+
+  getTodoList() {
+    return this.get(this.ITEM_KEY)
+  }
+
+  addTodoItem(item) {
+    this.add(this.ITEM_KEY, item)
+  }
+
+  removeTodoItem(item) {
+    const list = this.getTodoList();
+    const filteredArray = list.filter((listItem) => listItem.title !== item.title);
+    this.set(this.ITEM_KEY, filteredArray)
+  }
+
+  editTodoItem(item, newItem) {
+    const list = this.getTodoList();
+    const itemIndex = list.findIndex((listItem) => listItem.title === item.title);
+    if (itemIndex !== -1) {
+      list[itemIndex] = newItem;
+      localStorage.setItem(item.title, JSON.stringify)
+    }
+  }
+
+  toggleCompleteTodoItem(item) {
+    const list = this.getTodoList();;
+    const itemIndex = list.findIndex((listItem) => listItem.title === item.title);
+    if (itemIndex !== -1) {
+      list[itemIndex].completed = !list[itemIndex].completed
+      localStorage.setItem(item.title, JSON.stringify(list))
+    }
+
+  }
+
+
+}
+
+export const TodoListManagerInstance = new TodoListManager()
+if (!localStorage.getItem('todos')) {
+  localStorage.setItem('[]')
+}
 
 export function TodoForm({
   setFormVisibility,
@@ -24,11 +82,19 @@ export function TodoForm({
   async function handleCreateTodo() {
     try {
       setInProgress(true);
-      await axios.post(BASE_API_URL + '/todo', {
+      TodoListManagerInstance.addTodoItem({
         title: title,
-        note, // === note: note
-        author,
-      });
+        author: author,
+        description: note,
+        date: new Date().getTime(),
+        completed: false
+
+      })
+      // await axios.post(BASE_API_URL + '/todo', {
+      //   title: title,
+      //   note, // === note: note
+      //   author,
+      // });
 
       setPrevTitle(title);
 
@@ -42,18 +108,20 @@ export function TodoForm({
     } finally {
       setInProgress(false);
     }
-
+    console.log(TodoListManagerInstance.getTodoList())
     // axios.get().then().catch().finally()
   }
 
   async function handleEditTodo() {
     try {
       setInProgress(true);
-      await axios.put(BASE_API_URL + '/todo/' + data.id, {
+      setInProgress(true);
+      TodoListManagerInstance.editTodoItem({
         title,
-        note,
         author,
-      });
+        note,
+
+      })
 
       setSuccess(true);
     } catch (error) {
@@ -170,8 +238,10 @@ export function TodoForm({
           }}
           disabled={!isReadyToSend || isInProgress}
         >
+
           {isEditMode ? 'ZAPISZ' : 'DODAJ'}
         </button>
+
       </div>
     </div>
   );

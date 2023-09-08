@@ -11,6 +11,7 @@
   background-color: white;
   margin-right: 8px;
   cursor: pointer;
+  border: 1px solid #ccc;
 }
 
 .checkboxes__item__check-mark--checked {
