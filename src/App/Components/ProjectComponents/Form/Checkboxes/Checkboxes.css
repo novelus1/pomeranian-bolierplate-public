@@ -1,15 +1,16 @@
 .checkboxes__item {
   display: flex;
-  margin: 8px 0;
-  cursor: pointer;
+  margin: 8px auto;
+  cursor: default;
 }
 
 .checkboxes__item__check-mark {
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  border: 1px solid #cccccc;
+  background-color: white;
   margin-right: 8px;
+  cursor: pointer;
 }
 
 .checkboxes__item__check-mark--checked {
@@ -20,4 +21,16 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
+}
+
+@media (max-width: 430px) {
+  .checkboxes__item {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 220px) {
+  .checkboxes__item__check-mark {
+    width: 25px;
+  }
 }

@@ -6,3 +6,15 @@
   font-weight: bold;
   margin-bottom: 15px;
 }
+
+.field-section input {
+  display: flex;
+  border-radius: 0.3em;
+  border: 1px solid #ccc;
+}
+
+@media (max-width: 430px) {
+  .field-section__title {
+    font-size: 12px;
+  }
+}

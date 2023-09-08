@@ -24,10 +24,12 @@ export function Form() {
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
     const [isEmailValid, setIsEmailValid] = useState();
-    const [orderId, setOrderId] = useState();
     const [isPhoneNumberValid, setIsPhoneNumberValid] = useState();
     const [createAccount, setCreateAccount] = useState(false);
     const [subscribeToNewsletter, setSubscribeToNewsletter] = useState(false);
+    const [commentsCharacterCount, setCommentsCharacterCount] = useState(0);
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+
 
     const validatePasswordStrength = (password) => {
         const uppercaseRegex = /[A-Z]/;
@@ -136,11 +138,14 @@ export function Form() {
                     <form
                         onSubmit={(event) => {
                             event.preventDefault();
+                            setIsFormSubmitted(true)
+
                         }}
                     >
                         <MainSection title="PRODUCT ORDER">
                             <FieldSection title="Choose a product *">
                                 <Select
+                                    className='form__product-select'
                                     value={productOptions.find(
                                         (item) => item.value === formData.product
                                     )}
@@ -239,16 +244,45 @@ export function Form() {
                             <FieldSection title="Additional comments">
                                 <textarea
                                     name="details"
-                                    cols="40"
-                                    rows="10"
-                                    style={{ resize: 'none' }}
+                                    cols="22"
+                                    rows="5"
+                                    style={{ resize: 'none', maxWidth: "90%", border: "1px solid #ccc", borderRadius: "0.3em" }}
                                     value={formData.details}
-                                    onChange={updateFormData}
+                                    onChange={(event) => {
+                                        const newValue = event.target.value;
+                                        if (newValue.length <= 300) {
+                                            setFormData({ ...formData, details: newValue });
+                                            setCommentsCharacterCount(newValue.length);
+                                        }
+                                    }}
                                 />
+                                <div className="input__character-count">
+                                    {commentsCharacterCount} / 300 characters
+                                </div>
                             </FieldSection>
+
+
+                            <MainSection title="CREATE AN ACCOUNT">
+                                <Checkboxes
+                                    list={[
+                                        {
+                                            fieldName: 'createAccount',
+                                            label: 'I want to create an account along with my order.',
+                                            isChecked: createAccount,
+                                        },
+                                    ]}
+                                    onChange={(selectedFieldName, newValue) => {
+                                        setIsAllRequiredFieldsFilled(true);
+                                        if (selectedFieldName === 'createAccount') {
+                                            setCreateAccount(newValue);
+                                        }
+                                    }}
+                                />
+                            </MainSection>
+
                             {createAccount && (
-                                <MainSection title="CREATE ACCOUNT">
-                                    <FieldSection title="Login*">
+                                <MainSection title="">
+                                    <FieldSection title="Login *">
                                         <input
                                             type="text"
                                             name="login"
@@ -264,7 +298,7 @@ export function Form() {
                                             </p>
                                         )}
                                     </FieldSection>
-                                    <FieldSection title="Password*">
+                                    <FieldSection title="Password *">
                                         <input
                                             type="password"
                                             name="password"
@@ -278,7 +312,7 @@ export function Form() {
                                             </p>
                                         )}
                                     </FieldSection>
-                                    <FieldSection title="Confirm password*">
+                                    <FieldSection title="Confirm password *">
                                         <input
                                             type="password"
                                             name="passwordConfirmation"
@@ -306,11 +340,7 @@ export function Form() {
                                             label: 'I accept the terms and conditions. *',
                                             isChecked: formData.consents,
                                         },
-                                        {
-                                            fieldName: 'createAccount',
-                                            label: 'I want to create an account along with my order.',
-                                            isChecked: createAccount,
-                                        },
+
                                         {
                                             fieldName: 'subscribeToNewsletter',
                                             label: 'Subscribe me to the newsletter.',
@@ -319,9 +349,7 @@ export function Form() {
                                     ]}
                                     onChange={(selectedFieldName, newValue) => {
                                         setIsAllRequiredFieldsFilled(true);
-                                        if (selectedFieldName === 'createAccount') {
-                                            setCreateAccount(newValue);
-                                        } else if (selectedFieldName === 'subscribeToNewsletter') {
+                                        if (selectedFieldName === 'subscribeToNewsletter') {
                                             setSubscribeToNewsletter(newValue);
                                         } else {
                                             setFormData({
@@ -340,24 +368,15 @@ export function Form() {
                             </p>
                         )}
 
-                        <button type="submit" disabled={!isFieldsValid}>
+                        <button type="submit" className='input-field__submit-button' disabled={!isFieldsValid}>
                             Submit
                         </button>
-                    </form>
-                    {orderId && (
-                        <div className="modal-container">
-                            <div className="modal">
-                                <button
-                                    onClick={() => {
-                                        setOrderId(undefined);
-                                    }}
-                                >
-                                    CLOSE
-                                </button>
-                            </div>
-                        </div>
+                        {isFormSubmitted && (
+                            <p className='form__success-message'>Form subbmited!</p>
+                        )}
 
-                    )}
+                    </form>
+
                 </div>
             </>
         </div>

@@ -10,14 +10,72 @@
   color: #fe3756;
   font-weight: bold;
 }
+
+.input-field__submit-button {
+  margin: 0 auto;
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  height: 50px;
+  width: 120px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.input-field__submit-button:hover {
+  color: #ff4d69;
+  border: 1px solid #ff4d69;
+}
+.input-field__submit-button:disabled,
+.input-field__submit-button:disabled:hover {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: grey;
+  border: none;
+}
+
 .form-wrapper {
+  user-select: none;
   align-items: center;
   justify-content: center;
   display: flex;
-  width: 100%;
+  margin: auto;
+  background-color: rgba(73, 125, 143, 0.622);
+  max-width: 500px;
+  margin-bottom: 2em;
+  border-radius: 2em;
 }
-
 .form {
   word-wrap: break-word;
-  max-width: 60%;
+  margin: auto;
+  max-width: 95%;
+}
+
+.form__success-message {
+  text-align: center;
+  margin-bottom: 2em;
+  color: green;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.form__product-select {
+  max-width: 200px;
+}
+
+@media (max-width: 430px) {
+  .input__character-count {
+    font-size: 12px;
+  }
+  .input-field-error-message,
+  .input-field-error {
+    font-size: 12px;
+  }
+
+  .form-wrapper {
+    border-radius: 0;
+  }
 }

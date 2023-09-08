@@ -2,31 +2,31 @@ import { Link } from 'react-router-dom';
 import ProjectCard from '../Components/ProjectComponents/ProjectCards/ProjectCards';
 import './styles.css'
 
+const availableCards = [
+  {
+    sectionTitle: 'Hit The Mole',
+    description: 'A game about hitting moles!',
+    link: '/projects/hit-the-mole',
+  },
+
+  {
+    sectionTitle: 'Memory Game',
+    description: 'Memo Game',
+    link: '/projects/memo-game',
+  },
+  {
+    sectionTitle: 'Form',
+    description: 'Product order form template',
+    link: '/projects/form',
+  },
+
+  {
+    sectionTitle: 'To Do List',
+    description: 'To Do List',
+    link: '/projects/to-do-list',
+  },
+];
 export const Projects = () => {
-  const availableCards = [
-    {
-      sectionTitle: 'Hit The Mole',
-      description: 'A game about hitting moles!',
-      link: '/projects/hit-the-mole',
-    },
-
-    {
-      sectionTitle: 'Memory Game',
-      description: 'Memo Game',
-      link: '/projects/memo-game',
-    },
-    {
-      sectionTitle: 'Form',
-      description: 'Form with API',
-      link: '/projects/form',
-    },
-
-    {
-      sectionTitle: 'To Do List',
-      description: 'To Do List',
-      link: '/projects/to-do-list',
-    },
-  ];
   return (
     <div className="projects">
       <header className="projects__header">
