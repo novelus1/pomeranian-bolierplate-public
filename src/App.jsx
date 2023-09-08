@@ -10,6 +10,7 @@ import { Techstack } from './App/Techstack/Techstack';
 import { Projects } from './App/Projects/Projects';
 import CookieBanner from './App/Components/SectionComponents/Cookies/Cookies'
 import { HitTheMoleGame } from './App/Components/ProjectComponents/MoleGame/HitTheMoleGame';
+import { Form } from './App/Components/ProjectComponents/Form/Form';
 
 export function App() {
   return (
@@ -24,6 +25,7 @@ export function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="projects/*" element={<Projects />} />
           <Route path="/projects/hit-the-mole" element={<HitTheMoleGame />} />
+          <Route path="/projects/form" element={<Form />} />
         </Route>
       </Routes>
       <CookieBanner />

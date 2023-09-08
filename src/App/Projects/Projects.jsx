@@ -11,20 +11,20 @@ export const Projects = () => {
     },
 
     {
-      sectionTitle: 'Projects',
-      description: 'My projects and exercises',
-      link: '/projects',
+      sectionTitle: 'Memory Game',
+      description: 'Memo Game',
+      link: '/projects/memo-game',
     },
     {
-      sectionTitle: 'Tech stack',
-      description: 'My current technology stack',
-      link: '/tech',
+      sectionTitle: 'Form',
+      description: 'Form with API',
+      link: '/projects/form',
     },
 
     {
-      sectionTitle: 'About',
-      description: 'Here you can see who I am',
-      link: '/about',
+      sectionTitle: 'To Do List',
+      description: 'To Do List',
+      link: '/projects/to-do-list',
     },
   ];
   return (

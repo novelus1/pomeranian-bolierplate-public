@@ -33,7 +33,7 @@ const MoleGameSettings = ({
 
   if (!gameStarted) {
     return (
-      <div>
+      <div style={{ marginTop: "5em" }}>
         <div className="mole-game__settings-wrapper">
           {scoreCount !== null && winTime !== null ? (
             <h2>

@@ -162,23 +162,17 @@
 }
 
 @media (max-width: 575px) {
-  .mole-game__time-section h4,
-  .mole-game__count-section h4,
-  .mole-game__control-section h4 {
-    display: none;
-  }
-
   .mole-game__options-ui button {
-    font-size: 12px;
+    font-size: 8px;
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 530px) {
   .mole-game__board-info {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    max-width: 60%;
+    max-width: 30%;
   }
 }
 
@@ -194,6 +188,9 @@
   .mole-game__options-ui button {
     width: 50%;
   }
+  .mole-game__control-section {
+    margin-left: -3em;
+  }
 }
 
 @media (max-width: 335px) {
@@ -202,7 +199,7 @@
   }
 }
 
-@media (max-width: 250px) {
+@media (max-width: 320px) {
   .mole-game__time-section,
   .mole-game__count-section,
   .mole-game__control-section {
@@ -214,8 +211,14 @@
     margin: 0 auto;
     word-wrap: break-word;
   }
+  .mole-game__timer,
+  .mole-game__score,
+  .mole-game__restart-button {
+    max-width: 70%;
+    margin: 0 auto;
+  }
 
-  body {
-    overflow-x: hidden;
+  .mole-game__control-section {
+    margin-left: 0;
   }
 }
