@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './MemoGame.css';
-import MemoGameCardList from './MemoCardList/MemoCardList'
-
-
+import MemoGameCardList from './MemoCardList/MemoCardList';
 import { MemoCard } from './MemoCard/MemoCard';
+import MemoTimer from './MemoTimer/MemoTimer';
 
 export function MemoGame() {
   const [cards, setCards] = useState([]);
@@ -14,7 +13,7 @@ export function MemoGame() {
 
   useEffect(() => {
     if (chooseCardOne && chooseCardTwo) {
-      setCardChoiceDisabled(true)
+      setCardChoiceDisabled(true);
       if (chooseCardOne.src === chooseCardTwo.src) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
@@ -32,32 +31,58 @@ export function MemoGame() {
     }
   }, [chooseCardOne, chooseCardTwo]);
 
-  const shuffleCards = () => {
-    const shuffledCards = [...MemoGameCardList, ...MemoGameCardList]
-      .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }));
+  const shuffleCards = (difficulty) => {
+    const shuffledCards = [];
+    const maxCardCount = {
+      normal: 10,
+      medium: 16,
+      hard: 24,
+    }[difficulty];
+
+    const availableCards = MemoGameCardList.slice(0, maxCardCount);
+
+    while (shuffledCards.length < maxCardCount) {
+      const randomIndex = Math.floor(Math.random() * availableCards.length);
+      const card = availableCards[randomIndex];
+
+      shuffledCards.push({ ...card, id: shuffledCards.length });
+      shuffledCards.push({ ...card, id: shuffledCards.length });
+
+      availableCards.splice(randomIndex, 1);
+    }
+
+    shuffledCards.sort(() => Math.random() - 0.5);
 
     setCards(shuffledCards);
     setTurns(0);
   };
 
   const handleCardChoice = (card) => {
-    if (card.id === chooseCardOne?.id) return
+    if (card.id === chooseCardOne?.id) return;
     chooseCardOne ? setChooseCardTwo(card) : setChooseCardOne(card);
   };
 
   const newTurn = () => {
     setChooseCardOne(null);
     setChooseCardTwo(null);
-    setCardChoiceDisabled(false)
-    setTurns((prevTurns) => ++prevTurns);
+    setCardChoiceDisabled(false);
+    setTurns((prevTurns) => prevTurns + 1);
   };
 
   return (
     <div className="memo-game">
-      <h2>game</h2>
-      <button onClick={shuffleCards}>start</button>
-      <p>{turns}</p>
+      <h2>Game</h2>
+      <div className="difficulty-buttons">
+        <button onClick={() => shuffleCards('normal')} >
+          Normal (10 cards)
+        </button>
+        <button onClick={() => shuffleCards('medium')}>
+          Medium (16 cards)
+        </button>
+        <button onClick={() => shuffleCards('hard')}>Hard (24 cards)</button>
+      </div>
+
+      <p>Turns played {turns}</p>
       <div className="memo-game__card-grid">
         {cards.map((card) => (
           <MemoCard

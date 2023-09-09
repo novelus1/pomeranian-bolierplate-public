@@ -1,5 +1,5 @@
 .memo-game {
-  width: 1200px;
+  user-select: none;
 }
 
 button {
