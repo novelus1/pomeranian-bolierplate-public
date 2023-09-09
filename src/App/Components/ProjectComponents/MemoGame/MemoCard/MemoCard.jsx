@@ -1,9 +1,12 @@
 import cardback from '../../../../Images/memo-icons/Cardback.png';
 import './MemoCard.css';
 
-export function MemoCard({ card, handleCardChoice, cardFlipped }) {
+export function MemoCard({ card, handleCardChoice, cardFlipped, cardChoiceDisabled }) {
   const handleClick = () => {
-    handleCardChoice(card)
+    if (!cardChoiceDisabled) {
+      handleCardChoice(card)
+
+    }
 
   }
   return (

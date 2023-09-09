@@ -28,6 +28,7 @@ aside div {
 }
 
 aside {
+  width: 600px;
   border-radius: 1em;
   position: sticky;
   background-color: rgba(255, 255, 255, 0.835);
@@ -35,7 +36,11 @@ aside {
   text-align: center;
 }
 
-a:link,
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
 a:visited {
   text-decoration: none;
   color: black;
@@ -55,6 +60,9 @@ a:visited {
 }
 
 @media (max-width: 765px) {
+  aside {
+    margin: auto 5em;
+  }
   .aside__about-description {
     font-size: 17px;
   }
@@ -72,6 +80,11 @@ a:visited {
 }
 
 @media (max-width: 590px) {
+  aside {
+    position: static;
+    max-width: 100vw;
+    border-radius: none;
+  }
   .aside__about-description {
     font-size: 14px;
   }
@@ -91,6 +104,10 @@ a:visited {
 }
 
 @media (max-width: 350px) {
+  aside {
+    position: static;
+    max-width: 100vw;
+  }
   .aside__about-description {
     font-size: 12px;
   }

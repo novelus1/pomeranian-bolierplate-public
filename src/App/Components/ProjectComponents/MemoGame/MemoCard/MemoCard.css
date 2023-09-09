@@ -1,17 +1,26 @@
 .memo-card {
   position: relative;
 }
-
-img {
-  width: 150px;
-  height: 150px;
-}
-
 .memo-card .memo-card__front {
   position: absolute;
   transform: rotateY(90deg);
+  transition: all ease-in 0.25s;
 }
 
 .flipped .memo-card__front {
   transform: rotateY(0deg);
+}
+
+.flipped .memo-card__back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
+
+.memo-card__back {
+  transition: all ease-in 0.25s;
+  transition-delay: 0.25s;
+}
+.memo-card__front,
+.memo-card__back {
+  width: 50%;
 }

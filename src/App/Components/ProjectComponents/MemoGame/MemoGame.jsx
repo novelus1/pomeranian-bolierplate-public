@@ -1,29 +1,20 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './MemoGame.css';
+import MemoGameCardList from './MemoCardList/MemoCardList'
 
-import bulbasaur from '../../../Images/memo-icons/Bulbasaur.png';
-import charmander from '../../../Images/memo-icons/Charmander.png';
-import mewtwo from '../../../Images/memo-icons/Mewtwo.png';
-import pikachu from '../../../Images/memo-icons/Pikachu.png';
-import squirtle from '../../../Images/memo-icons/Squirtle.png';
+
 import { MemoCard } from './MemoCard/MemoCard';
-
-const gameCards = [
-  { src: bulbasaur, matched: false },
-  { src: charmander, matched: false },
-  { src: mewtwo, matched: false },
-  { src: pikachu, matched: false },
-  { src: squirtle, matched: false },
-];
 
 export function MemoGame() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [chooseCardOne, setChooseCardOne] = useState(null);
   const [chooseCardTwo, setChooseCardTwo] = useState(null);
+  const [cardChoiceDisabled, setCardChoiceDisabled] = useState(false);
 
   useEffect(() => {
     if (chooseCardOne && chooseCardTwo) {
+      setCardChoiceDisabled(true)
       if (chooseCardOne.src === chooseCardTwo.src) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
@@ -36,13 +27,13 @@ export function MemoGame() {
         });
         newTurn();
       } else {
-        newTurn();
+        setTimeout(() => newTurn(), 750);
       }
     }
   }, [chooseCardOne, chooseCardTwo]);
 
   const shuffleCards = () => {
-    const shuffledCards = [...gameCards, ...gameCards]
+    const shuffledCards = [...MemoGameCardList, ...MemoGameCardList]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
 
@@ -51,12 +42,14 @@ export function MemoGame() {
   };
 
   const handleCardChoice = (card) => {
+    if (card.id === chooseCardOne?.id) return
     chooseCardOne ? setChooseCardTwo(card) : setChooseCardOne(card);
   };
 
   const newTurn = () => {
     setChooseCardOne(null);
     setChooseCardTwo(null);
+    setCardChoiceDisabled(false)
     setTurns((prevTurns) => ++prevTurns);
   };
 
@@ -64,16 +57,17 @@ export function MemoGame() {
     <div className="memo-game">
       <h2>game</h2>
       <button onClick={shuffleCards}>start</button>
-
+      <p>{turns}</p>
       <div className="memo-game__card-grid">
         {cards.map((card) => (
           <MemoCard
             key={card.id}
             card={card}
+            handleCardChoice={handleCardChoice}
             cardFlipped={
               card === chooseCardOne || card === chooseCardTwo || card.matched
             }
-            handleCardChoice={handleCardChoice}
+            cardChoiceDisabled={cardChoiceDisabled}
           />
         ))}
       </div>
