@@ -1,0 +1,17 @@
+.memo-card {
+  position: relative;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+.memo-card .memo-card__front {
+  position: absolute;
+  transform: rotateY(90deg);
+}
+
+.flipped .memo-card__front {
+  transform: rotateY(0deg);
+}

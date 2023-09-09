@@ -12,7 +12,7 @@ import CookieBanner from './App/Components/SectionComponents/Cookies/Cookies'
 import { HitTheMoleGame } from './App/Components/ProjectComponents/MoleGame/HitTheMoleGame';
 import { Form } from './App/Components/ProjectComponents/Form/Form';
 import { TodoList } from './App/Components/ProjectComponents/ToDoWithServer/index';
-
+import { MemoGame } from './App/Components/ProjectComponents/MemoGame/MemoGame'
 export function App() {
   return (
     <BrowserRouter>
@@ -28,6 +28,7 @@ export function App() {
           <Route path="/projects/hit-the-mole" element={<HitTheMoleGame />} />
           <Route path="/projects/form" element={<Form />} />
           <Route path="/projects/to-do-list" element={<TodoList />} />
+          <Route path="/projects/memo-game" element={<MemoGame />} />
         </Route>
       </Routes>
       <CookieBanner />
