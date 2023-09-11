@@ -1,27 +1,36 @@
 import { Link } from 'react-router-dom';
-import ProjectCard from '../Components/ProjectComponents/ProjectCards/ProjectCards';
-import './styles.css'
+import ProjectCard from '../Components/ProjectComponents/ProjectCard/ProjectCard';
+import mole from '../Images/ProjectCardIcons//hitthemole.svg';
+import form from '../Images/ProjectCardIcons/form.svg';
+import memo from '../Images/ProjectCardIcons/memo.svg';
+import './Projects.css'
 
 const availableCards = [
   {
     sectionTitle: 'Hit The Mole',
+    icon: <img src={mole} alt="mole project" />,
     description: 'A game about hitting moles!',
     link: '/projects/hit-the-mole',
   },
-
-  {
-    sectionTitle: 'Memory Game',
-    description: 'Memo Game',
-    link: '/projects/memo-game',
-  },
   {
     sectionTitle: 'Form',
-    description: 'Product order form template',
+    icon: <img src={form} alt="mole project" />,
+    description: 'A product order form template',
     link: '/projects/form',
   },
 
   {
+    sectionTitle: 'Memory Game',
+    icon: <img src={memo} alt="mole project" />,
+
+    description: 'Card matching memory game',
+    link: '/projects/memo-game',
+  },
+
+  {
     sectionTitle: 'To Do List',
+    icon: <img src={mole} alt="mole project" />,
+
     description: 'To Do List',
     link: '/projects/to-do-list',
   },
@@ -32,7 +41,7 @@ export const Projects = () => {
       <header className="projects__header">
         <div className="projects__head">
           <h3 className="projects__title">My projects</h3>
-          <p className="projects__description">Below you can find my projects. </p>
+          <p className="projects__description">Below you can find my recent projects. </p>
         </div>
       </header>
       <div className="projects__card-set">

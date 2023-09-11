@@ -6,6 +6,7 @@ const ProjectCard = ({ sectionTitle, description, icon, link }) => {
             <h3 className="project-card__title">{sectionTitle}</h3>
             <div className="project-card__icon-wrapper">{icon}</div>
             <p className="project-card__description">{description}</p>
+            <span className="project-card__link" href={link}>Read more</span>
         </div>
     );
 };

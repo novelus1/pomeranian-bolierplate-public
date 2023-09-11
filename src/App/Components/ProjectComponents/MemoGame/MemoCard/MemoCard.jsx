@@ -1,4 +1,4 @@
-import cardback from '../../../../Images/memo-icons/Cardback.png';
+import cardback from '../../../../Images/MemoCards/Cardback.png';
 import './MemoCard.css';
 
 export function MemoCard({

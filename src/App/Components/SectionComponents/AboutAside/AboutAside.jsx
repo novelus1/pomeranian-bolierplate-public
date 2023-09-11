@@ -1,9 +1,9 @@
-import selfie from '../../../Images/about-icons/selfie.jpg';
-import location from '../../../Images/about-icons/location.svg';
-import phone from '../../../Images/about-icons/phone.svg';
-import email from '../../../Images/about-icons/email.png';
-import linkedin from '../../../Images/about-icons/linkedin.png';
-import github from '../../../Images/about-icons/github.png';
+import selfie from '../../../Images/AboutIcons/selfie.jpg';
+import location from '../../../Images/AboutIcons/location.svg';
+import phone from '../../../Images/AboutIcons/phone.svg';
+import email from '../../../Images/AboutIcons/email.png';
+import linkedin from '../../../Images/AboutIcons/linkedin.png';
+import github from '../../../Images/AboutIcons/github.png';
 import './AboutAside.css';
 
 const AboutAside = () => {

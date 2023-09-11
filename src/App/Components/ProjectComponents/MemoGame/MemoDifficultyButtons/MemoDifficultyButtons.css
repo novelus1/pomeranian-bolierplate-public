@@ -1,0 +1,57 @@
+.difficulty-buttons button.active {
+  background: #fe3756;
+  border-color: #fe3756;
+}
+
+.difficulty-buttons__ui-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.difficulty-buttons__start-button {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.difficulty-button,
+.difficulty-buttons__start-button button {
+  padding: 1.25rem 2.2rem 1.25rem 2.2rem;
+  margin: 0.5em;
+  border-radius: 0.5rem;
+  border-color: #23213d;
+  background: #23213d;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  width: 10em;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (min-width: 485px) {
+  .difficulty-buttons__ui-wrapper {
+    margin-top: 20vh;
+  }
+}
+
+@media (max-width: 255px) {
+  .difficulty-buttons__ui-wrapper {
+    width: 50%;
+  }
+  .difficulty-button,
+  .difficulty-buttons__start-button {
+    max-width: 120px;
+  }
+}

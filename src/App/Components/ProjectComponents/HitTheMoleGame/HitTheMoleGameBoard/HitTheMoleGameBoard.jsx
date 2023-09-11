@@ -1,6 +1,6 @@
 import React from 'react';
-import Mole from '../../../Images/mole-game/mole.png';
-import formatTime from './Time';
+import Mole from '../../../../Images/MoleIcons/mole.png';
+import formatTime from '../../../../Helpers/formatTime';
 
 export const MoleGameBoard = ({
   scoreCount,

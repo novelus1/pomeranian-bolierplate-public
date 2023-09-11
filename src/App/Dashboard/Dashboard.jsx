@@ -1,8 +1,8 @@
 import DashboardCard from '../Components/SectionComponents/DashboardCard/DashboardCard';
-import edit from '../Images/dashboard-icons/edit.svg';
-import code from '../Images/dashboard-icons/code.svg';
-import cv from '../Images/dashboard-icons/personalcard.svg';
-import about from '../Images/dashboard-icons/about.png';
+import edit from '../Images/DashboardCardIcons/edit.svg';
+import code from '../Images/DashboardCardIcons/code.svg';
+import cv from '../Images/DashboardCardIcons/personalcard.svg';
+import about from '../Images/DashboardCardIcons/about.png';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
 

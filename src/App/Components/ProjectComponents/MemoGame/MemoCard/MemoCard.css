@@ -22,6 +22,6 @@
 }
 .memo-card__front,
 .memo-card__back {
-  width: 50%;
   cursor: pointer;
+  max-width: 150px;
 }

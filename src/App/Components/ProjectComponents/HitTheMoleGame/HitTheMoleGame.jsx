@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import MoleGameSettings from './Settings.jsx';
-import MoleGameBoard from './Board';
-import formatTime from './Time.jsx';
-import whackSound from '../../../Sounds/mole-game/whack.mp3';
-import victorySound from '../../../Sounds/mole-game/victory.mp3'
-import './styles.css';
+import MoleGameSettings from './HitTheMoleGameSettings/HitTheMoleGameSettings.jsx';
+import MoleGameBoard from './HitTheMoleGameBoard/HitTheMoleGameBoard.jsx';
+import formatTime from '../../../Helpers/formatTime.jsx';
+import whackSound from '../../../Sounds/MoleGame/whack.mp3';
+import victorySound from '../../../Sounds/MoleGame/victory.mp3'
+import './HitTheMoleGame.css';
 
-const defaultGameTime = 1 * 60 * 1000;
+const defaultGameTime = 1 * 60;
 const moleSpeed = 1000;
 const defaultArrayState = Array(10).fill({
   isVisible: false,
@@ -15,7 +15,7 @@ const defaultArrayState = Array(10).fill({
 
 export const HitTheMoleGame = () => {
 
-  const [gameTime, setGameTime] = useState(defaultGameTime / 1000);
+  const [gameTime, setGameTime] = useState(defaultGameTime);
   const [timer, setTimer] = useState(gameTime);
   const [gameStarted, setGameStarted] = useState(false);
   const [moleArray, setMoleArray] = useState(defaultArrayState);
