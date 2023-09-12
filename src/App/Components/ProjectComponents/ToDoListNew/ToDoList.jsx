@@ -5,27 +5,22 @@ if (!localStorage.getItem('todos')) {
     localStorage.setItem('todos', '[]');
 }
 
-const toDoItem = {
-    title: 'title',
-    author: 'author',
-    formText: 'formText',
-};
-const toDoItem2 = {
-    title: 'title',
-    author: 'author',
-    formText: 'formText',
-};
-
-const toDoList = [toDoItem, toDoItem2];
-
-toDoList.map((data) => {
-    console.log(data);
-});
 
 function ToDoList() {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [formText, setFormText] = useState('');
+
+
+
+
+
+
+
+
+
+
+
     const [toDoList, setToDoList] = useState([]);
 
     useEffect(() => {
@@ -36,10 +31,15 @@ function ToDoList() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Title', title);
-        console.log('Author', author);
-        console.log('Content', formText);
-    };
+        fakeApiManager.add({
+            title: title,
+            author: author,
+            formText: formText
+        })
+    }
+
+
+
     return (
         <>
             <div className="todo__wrapper">
@@ -88,6 +88,7 @@ function ToDoList() {
                 </div>
 
                 <button onClick={handleSubmit}>submit</button>
+
             </div>
         </>
     );
