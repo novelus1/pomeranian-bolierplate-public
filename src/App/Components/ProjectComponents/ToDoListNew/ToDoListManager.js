@@ -3,15 +3,19 @@ import { LocalStorageManager } from './LocalStorageManager';
 class TodoListManager extends LocalStorageManager {
   ITEM_KEY = 'todos';
 
+  constructor() {
+    super();
+  }
+
   list() {
     return this.get(this.ITEM_KEY);
   }
 
-  add(item) {
+  addTodo(item) {
     this.add(this.ITEM_KEY, item);
   }
 
-  remove(item) {
+  removeTodo(item) {
     const list = this.getTodoList();
     const filteredArray = list.filter(
       (listItem) => listItem.title !== item.title
@@ -19,7 +23,7 @@ class TodoListManager extends LocalStorageManager {
     this.set(this.ITEM_KEY, filteredArray);
   }
 
-  edit(item, newItem) {
+  editTodo(item, newItem) {
     const list = this.getTodoList();
     const itemIndex = list.findIndex(
       (listItem) => listItem.title === item.title
@@ -30,7 +34,7 @@ class TodoListManager extends LocalStorageManager {
     }
   }
 
-  markCompleted(item) {
+  markCompletedTodo(item) {
     const list = this.getTodoList();
     const itemIndex = list.findIndex(
       (listItem) => listItem.title === item.title

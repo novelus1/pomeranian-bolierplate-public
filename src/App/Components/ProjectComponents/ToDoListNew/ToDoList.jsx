@@ -5,22 +5,10 @@ if (!localStorage.getItem('todos')) {
     localStorage.setItem('todos', '[]');
 }
 
-
 function ToDoList() {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [formText, setFormText] = useState('');
-
-
-
-
-
-
-
-
-
-
-
     const [toDoList, setToDoList] = useState([]);
 
     useEffect(() => {
@@ -34,11 +22,14 @@ function ToDoList() {
         fakeApiManager.add({
             title: title,
             author: author,
-            formText: formText
+            formText: formText,
+        }).then(() => {
+            fakeApiManager.list().then((list) => {
+                setToDoList(list);
+            });
         })
+
     }
-
-
 
     return (
         <>
@@ -88,7 +79,6 @@ function ToDoList() {
                 </div>
 
                 <button onClick={handleSubmit}>submit</button>
-
             </div>
         </>
     );
