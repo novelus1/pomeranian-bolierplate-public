@@ -1,0 +1,13 @@
+.todo__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.todo__title-field,
+.todo__author-field,
+.todo__form-field {
+  margin: 0 1em;
+}

@@ -9,8 +9,8 @@ import { Techstack } from './App/Techstack/Techstack';
 import { Projects } from './App/Projects/Projects';
 import { HitTheMoleGame } from './App/Components/ProjectComponents/HitTheMoleGame/HitTheMoleGame';
 import { Form } from './App/Components/ProjectComponents/Form/Form';
-import { TodoList } from './App/Components/ProjectComponents/ToDoWithServer/index';
 import { MemoGame } from './App/Components/ProjectComponents/MemoGame/MemoGame'
+import TodoList from './App/Components/ProjectComponents/ToDoListNew/ToDoList';
 import CookieBanner from './App/Components/SectionComponents/Cookies/Cookies'
 export function App() {
   return (
