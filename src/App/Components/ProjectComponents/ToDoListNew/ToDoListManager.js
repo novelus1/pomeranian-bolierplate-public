@@ -12,26 +12,26 @@ class TodoListManager extends LocalStorageManager {
   }
 
   addTodo(item) {
-    this.add(this.ITEM_KEY, item);
+    const list = this.list();
+    item.id = Date.now();
+    list.push(item);
+    this.set(this.ITEM_KEY, list);
   }
-
   removeTodo(item) {
-    const list = this.getTodoList();
-    const filteredArray = list.filter(
-      (listItem) => listItem.title !== item.title
-    );
-    this.set(this.ITEM_KEY, filteredArray);
+    const list = this.list();
+    const updatedList = list.filter((listItem) => listItem.id !== item.id);
+    this.set(this.ITEM_KEY, updatedList);
   }
-
   editTodo(item, newItem) {
-    const list = this.getTodoList();
-    const itemIndex = list.findIndex(
-      (listItem) => listItem.title === item.title
-    );
-    if (itemIndex !== -1) {
-      list[itemIndex] = newItem;
-      this.set(item.title, list);
-    }
+    const list = this.list();
+    const updatedList = list.map((listItem) => {
+      if (listItem.id === item.id) {
+        return { ...listItem, ...newItem };
+      } else {
+        return listItem;
+      }
+    });
+    this.set(this.ITEM_KEY, updatedList);
   }
 
   markCompletedTodo(item) {

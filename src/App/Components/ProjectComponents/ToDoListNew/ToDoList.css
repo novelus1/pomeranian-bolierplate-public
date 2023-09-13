@@ -1,13 +1,47 @@
-.todo__wrapper {
+.todo__item-wrapper {
+  padding-left: 1em;
+  border-radius: 0.5em;
+}
+
+.todo__form-wrapper {
+  margin: 1em auto;
+  width: 200px;
+}
+
+.todo__item {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin: 1em auto;
+  background-color: white;
+}
+
+.todo__item-actions {
+  display: flex;
   gap: 1em;
 }
 
-.todo__title-field,
-.todo__author-field,
-.todo__form-field {
-  margin: 0 1em;
+.todo__item-remove {
+  width: 50px;
+  height: 50px;
+  background-image: url('../../../Images/ToDoListIcons/Bin.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.todo__item-complete {
+  width: 50px;
+  height: 50px;
+  background-image: url('../../../Images/ToDoListIcons/Complete.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+.todo__item.completed-overlay {
+  background-color: green;
+  /* Add any other styles you want for completed items */
 }
