@@ -8,7 +8,8 @@ class TodoListManager extends LocalStorageManager {
   }
 
   list() {
-    return this.get(this.ITEM_KEY);
+    const list = this.get(this.ITEM_KEY);
+    return list || [];
   }
 
   addTodo(item) {
@@ -17,11 +18,13 @@ class TodoListManager extends LocalStorageManager {
     list.push(item);
     this.set(this.ITEM_KEY, list);
   }
+
   removeTodo(item) {
     const list = this.list();
     const updatedList = list.filter((listItem) => listItem.id !== item.id);
     this.set(this.ITEM_KEY, updatedList);
   }
+
   editTodo(item, newItem) {
     const list = this.list();
     const updatedList = list.map((listItem) => {
@@ -35,13 +38,13 @@ class TodoListManager extends LocalStorageManager {
   }
 
   markCompletedTodo(item) {
-    const list = this.getTodoList();
+    const list = this.list();
     const itemIndex = list.findIndex(
       (listItem) => listItem.title === item.title
     );
     if (itemIndex !== -1) {
       list[itemIndex].completed = !list[itemIndex].completed;
-      this.set(item.title, list);
+      this.set(this.ITEM_KEY, list);
     }
   }
 }

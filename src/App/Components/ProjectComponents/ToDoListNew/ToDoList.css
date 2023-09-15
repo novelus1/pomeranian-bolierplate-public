@@ -43,5 +43,10 @@
 }
 .todo__item.completed-overlay {
   background-color: green;
-  /* Add any other styles you want for completed items */
+}
+
+.todo__error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
 }
