@@ -1,52 +1,11 @@
-.todo__item-wrapper {
-  padding-left: 1em;
-  border-radius: 0.5em;
-}
-
-.todo__form-wrapper {
-  margin: 1em auto;
-  width: 200px;
-}
-
-.todo__item {
+.todo__wrapper {
   display: flex;
-  justify-content: space-between;
-  padding: 1em;
-  border-radius: 0.5em;
-  margin: 1em auto;
-  background-color: white;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
-.todo__item-actions {
-  display: flex;
-  gap: 1em;
-}
-
-.todo__item-remove {
-  width: 50px;
-  height: 50px;
-  background-image: url('../../../Images/ToDoListIcons/Bin.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-}
-
-.todo__item-complete {
-  width: 50px;
-  height: 50px;
-  background-image: url('../../../Images/ToDoListIcons/Complete.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-}
-.todo__item.completed-overlay {
-  background-color: green;
-}
-
-.todo__error-message {
-  color: red;
-  margin-top: 5px;
-  font-size: 14px;
+.todo__container {
+  max-width: 60%;
 }

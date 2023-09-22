@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import './ToDoList.css';
-import { todoListManager } from './ToDoListManager';
+import { todoListManager } from './ToDoManager/ToDoListManager';
+import TaskList from './ToDoTaskList/TaskList';
+import SortingButtons from './ToDoSorting/SortingButtons';
+import TaskForm from './ToDoTaskForm/TaskForm';
 
 function ToDoList() {
     const [task, setTask] = useState('');
-    const [author, setAuthor] = useState('');
     const [formText, setFormText] = useState('');
-    const [toDoList, setToDoList] = useState([]);
+    const [toDoList, setToDoList] = useState(todoListManager.list());
     const [editingItem, setEditingItem] = useState(null);
     const [sortDate, setSortDate] = useState('newest');
     const [selectedShowStatus, setSelectedShowStatus] = useState('all');
     const [errorMessage, setErrorMessage] = useState('');
+
+    const maxTitleLength = 30;
+    const maxDescriptionLength = 100;
 
 
     useEffect(() => {
@@ -42,7 +47,12 @@ function ToDoList() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!task || !author || !formText) {
+        if (!task.trim() && !formText.trim()) {
+            setErrorMessage('Please fill in all fields');
+            return;
+        }
+
+        if (!task || !formText) {
             setErrorMessage('Please fill in all fields');
             return;
         }
@@ -51,13 +61,16 @@ function ToDoList() {
 
         const newItem = {
             task: task,
-            author: author,
             formText: formText,
             createdAt: Date.now(),
             completed: false,
         };
 
-        todoListManager.addTodo(newItem);
+        if (editingItem) {
+            todoListManager.editTodo(editingItem, newItem);
+        } else {
+            todoListManager.addTodo(newItem);
+        }
 
         const updatedList = todoListManager.list();
         if (updatedList) {
@@ -66,9 +79,10 @@ function ToDoList() {
         }
 
         setTask('');
-        setAuthor('');
         setFormText('');
+        setEditingItem(null);
     };
+
 
     const handleRemove = (item) => {
         todoListManager.removeTodo(item);
@@ -95,21 +109,16 @@ function ToDoList() {
 
     const handleEdit = (item) => {
         setTask(item.task);
-        setAuthor(item.author);
         setFormText(item.formText);
         setEditingItem(item);
     };
 
-    const handleSaveEdit = () => {
+    const handleSaveEdit = (updatedItem) => {
         if (editingItem) {
-            const updatedItem = {
-                ...editingItem,
-                task: task,
-                author: author,
-                formText: formText,
-            };
-
-            todoListManager.editTodo(editingItem, updatedItem);
+            if (!updatedItem.task.trim() || !updatedItem.formText.trim()) {
+                setErrorMessage('Please fill in all fields');
+                return;
+            }
 
             setToDoList((prevList) => {
                 const updatedList = prevList.map((todoItem) =>
@@ -119,134 +128,47 @@ function ToDoList() {
                 return sortedList;
             });
 
+            todoListManager.editTodo(editingItem, updatedItem);
+
             setTask('');
-            setAuthor('');
             setFormText('');
             setEditingItem(null);
+            setErrorMessage('');
         }
     };
 
     return (
-        <div className="todo__container">
-            <div className="todo__sorting-buttons">
-                <button onClick={() => setSortDate(sortDate === 'newest' ? 'oldest' : 'newest')}>
-                    {sortDate === 'newest' ? 'Sort by Oldest' : 'Sort by Newest'}
-                </button>
-                <select
-                    value={selectedShowStatus}
-                    onChange={(e) => setSelectedShowStatus(e.target.value)}
-                >
-                    <option value="all">Show All</option>
-                    <option value="completed">Show Completed</option>
-                    <option value="uncompleted">Show Uncompleted</option>
-                </select>
+        <div className='todo__wrapper'>
+            <div className="todo__container">
+                <SortingButtons
+                    sortDate={sortDate}
+                    selectedShowStatus={selectedShowStatus}
+                    handleSortDateChange={(newSortDate) => setSortDate(newSortDate)}
+                    handleShowStatusChange={(newStatus) => setSelectedShowStatus(newStatus)}
+                />
+                <TaskList
+                    toDoList={filterTasksByStatus(sortToDoList(toDoList))}
+                    editingItem={editingItem}
+                    handleComplete={handleComplete}
+                    handleRemove={handleRemove}
+                    handleEdit={handleEdit}
+                    handleSaveEdit={handleSaveEdit}
+                />
+                {!editingItem && (
+                    <TaskForm
+                        task={task}
+                        formText={formText}
+                        errorMessage={errorMessage}
+                        handleSubmit={handleSubmit}
+                        handleChange={(field, value) => {
+                            if (field === 'task') setTask(value);
+                            if (field === 'formText') setFormText(value);
+                        }}
+                    />
+                )}
             </div>
-            {toDoList ? (
-                filterTasksByStatus(sortToDoList(toDoList)).map((data, index) => (
-                    <div
-                        key={index}
-                        className={`todo__item ${data.completed ? 'completed-overlay' : ''}`}
-                    >
-                        <div className="todo__item-content">
-                            <h4>{data.task}</h4>
-                            <span>{data.author}</span>
-                            <p>{new Date(data.createdAt).toLocaleString('pl-PL')}</p>
-                            <p>{data.formText}</p>
-                            <p>Completed: {data.completed ? 'Yes' : 'No'}</p>
-                        </div>
-                        <div className="todo__item-actions">
-                            {editingItem === data ? (
-                                <div className="todo__edit-form-wrapper">
-                                    <form onSubmit={handleSaveEdit}>
-                                        <div className="todo__task-wrapper">
-                                            <input
-                                                className="todo__task-input"
-                                                type="text"
-                                                placeholder="Edit Task"
-                                                value={task}
-                                                onChange={(e) => setTask(e.target.value)}
-                                            />
-                                        </div>
-                                        <div className="todo__author-wrapper">
-                                            <input
-                                                className="todo__author-input"
-                                                type="text"
-                                                placeholder="Edit Author"
-                                                value={author}
-                                                onChange={(e) => setAuthor(e.target.value)}
-                                            />
-                                        </div>
-                                        <div className="todo__content-wrapper">
-                                            <input
-                                                className="todo__content-input"
-                                                type="text"
-                                                placeholder="Edit Text"
-                                                value={formText}
-                                                onChange={(e) => setFormText(e.target.value)}
-                                            />
-                                            <button type="submit">Save Edit</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            ) : (
-                                <>
-                                    <button
-                                        className="todo__item-complete"
-                                        onClick={() => handleComplete(data)}
-                                    >
-                                    </button>
-                                    <button onClick={() => handleRemove(data)} className="todo__item-remove">
-                                    </button>
-                                    <button onClick={() => handleEdit(data)} className="todo__item-edit">
-                                    </button>
-                                </>
-                            )}
-                        </div>
-                    </div>
-                ))
-            ) : (
-                <p>Loading or no data available</p>
-            )}
-            {editingItem === null && (
-                <div className="todo__form-wrapper">
-                    <form onSubmit={handleSubmit}>
-                        <div className="todo__task-wrapper">
-                            <label className="todo__task-field">Task</label>
-                            <input
-                                className="todo__task-input"
-                                type="text"
-                                placeholder="Task"
-                                value={task}
-                                onChange={(e) => setTask(e.target.value)}
-                            />
-                        </div>
-                        <div className="todo__author-wrapper">
-                            <label className="todo__author-field">Author</label>
-                            <input
-                                className="todo__author-input"
-                                type="text"
-                                placeholder="Author"
-                                value={author}
-                                onChange={(e) => setAuthor(e.target.value)}
-                            />
-                        </div>
-                        <div className="todo__content-wrapper">
-                            <label className="todo__content-field">Text</label>
-                            <input
-                                className="todo__content-input"
-                                type="text"
-                                placeholder="Text"
-                                value={formText}
-                                onChange={(e) => setFormText(e.target.value)}
-                            />
-                            <p className="todo__error-message">{errorMessage}</p>
-                            <button onClick={handleSubmit}>Submit</button>
-                        </div>
-                    </form>
-                </div>
-            )}
         </div>
     );
 }
 
-export default ToDoList; 
+export default ToDoList;

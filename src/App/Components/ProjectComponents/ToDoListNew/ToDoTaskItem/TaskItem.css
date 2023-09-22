@@ -1,0 +1,67 @@
+.todo__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin: 1em auto;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.todo__item-actions {
+  display: flex;
+  gap: 1em;
+}
+
+.todo__item-remove {
+  width: 25px;
+  height: 25px;
+  background-image: url('../../../../Images/ToDoListIcons/Bin.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.todo__item-complete {
+  width: 25px;
+  height: 25px;
+  background-image: url('../../../../Images/ToDoListIcons/Complete.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.todo__item-edit {
+  width: 25px;
+  height: 25px;
+  background-image: url('../../../../Images/ToDoListIcons/Edit.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.todo__item.completed-overlay {
+  background-color: green;
+}
+
+.todo__item-content {
+  word-wrap: break-word;
+  max-width: 70%;
+}
+
+.todo__task-input,
+.todo__content-input {
+  margin-bottom: 0.5em;
+}
+
+.todo__content-wrapper,
+.todo__task-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
