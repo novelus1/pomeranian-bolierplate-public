@@ -4,6 +4,8 @@
   align-items: center;
   flex-wrap: wrap;
   margin: 0 auto;
+  cursor: default;
+  user-select: none;
 }
 
 .todo__container {

@@ -1,0 +1,10 @@
+.todo__sorting-buttons,
+.todo__sorting-buttons select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-bottom: 2em;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}

@@ -64,10 +64,13 @@ function TaskItem({ data, editingItem, handleComplete, handleRemove, handleEdit,
                     </>
                 ) : (
                     <>
-                        <h4>{task}</h4>
-                        <p>{formText}</p>
-                        <p>Added: {new Date(createdAt).toLocaleString('pl-PL')}</p>
-                        <p>Completed: {completed ? 'Yes' : 'No'}</p>
+                        <div className="todo__item-info">
+                            <h4>{task}</h4>
+                            <p>{formText}</p>
+                        </div>
+                        <div className="todo__item-date">
+                            <span>Added: {new Date(createdAt).toLocaleString('pl-PL')}</span>
+                        </div>
                     </>
                 )}
             </div>

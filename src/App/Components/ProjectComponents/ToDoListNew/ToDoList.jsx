@@ -14,8 +14,6 @@ function ToDoList() {
     const [selectedShowStatus, setSelectedShowStatus] = useState('all');
     const [errorMessage, setErrorMessage] = useState('');
 
-    const maxTitleLength = 30;
-    const maxDescriptionLength = 100;
 
 
     useEffect(() => {
@@ -146,14 +144,6 @@ function ToDoList() {
                     handleSortDateChange={(newSortDate) => setSortDate(newSortDate)}
                     handleShowStatusChange={(newStatus) => setSelectedShowStatus(newStatus)}
                 />
-                <TaskList
-                    toDoList={filterTasksByStatus(sortToDoList(toDoList))}
-                    editingItem={editingItem}
-                    handleComplete={handleComplete}
-                    handleRemove={handleRemove}
-                    handleEdit={handleEdit}
-                    handleSaveEdit={handleSaveEdit}
-                />
                 {!editingItem && (
                     <TaskForm
                         task={task}
@@ -166,6 +156,15 @@ function ToDoList() {
                         }}
                     />
                 )}
+
+                <TaskList
+                    toDoList={filterTasksByStatus(sortToDoList(toDoList))}
+                    editingItem={editingItem}
+                    handleComplete={handleComplete}
+                    handleRemove={handleRemove}
+                    handleEdit={handleEdit}
+                    handleSaveEdit={handleSaveEdit}
+                />
             </div>
         </div>
     );

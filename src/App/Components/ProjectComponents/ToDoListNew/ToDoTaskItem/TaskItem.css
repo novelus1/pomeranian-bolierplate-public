@@ -1,16 +1,18 @@
 .todo__item {
   display: flex;
-  justify-content: space-between;
   padding: 1em;
   border-radius: 0.5em;
   margin: 1em auto;
   background-color: white;
-  flex-wrap: wrap;
+  max-width: 90%;
+  flex-direction: column;
 }
 
 .todo__item-actions {
+  justify-content: flex-end;
   display: flex;
-  gap: 1em;
+  margin-top: 0.5em;
+  gap: 0.5em;
 }
 
 .todo__item-remove {
@@ -48,13 +50,22 @@
 }
 
 .todo__item-content {
-  word-wrap: break-word;
-  max-width: 70%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.todo__item-date {
+  margin-bottom: -2em;
+}
+
+.todo__item-info h4 {
+  margin-top: 0;
 }
 
 .todo__task-input,
 .todo__content-input {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .todo__content-wrapper,
@@ -63,5 +74,11 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+}
+
+@media (max-width: 840px) {
+  .todo__item-actions {
+    margin-top: 2.5em;
+    gap: 0.5em;
+  }
 }

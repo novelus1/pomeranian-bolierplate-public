@@ -1,4 +1,4 @@
-import React from 'react';
+import './SortingButtons.css'
 
 function SortingButtons({
   sortDate,
