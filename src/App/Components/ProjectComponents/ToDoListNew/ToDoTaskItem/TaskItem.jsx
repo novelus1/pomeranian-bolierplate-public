@@ -31,18 +31,21 @@ function TaskItem({ data, editingItem, handleComplete, handleRemove, handleEdit,
             <div className="todo__item-content">
                 {editingItem === data ? (
                     <>
-                        <input
-                            className="todo__task-input"
-                            type="text"
-                            placeholder="Edit Task"
-                            value={editedTask}
-                            onChange={(e) => {
-                                if (e.target.value.length <= maxTitleLength) {
-                                    setEditedTask(e.target.value);
-                                }
-                            }}
-                            maxLength={maxTitleLength}
-                        />
+                        <div className="todo__content-wrapper">
+                            <input
+                                className="todo__task-input"
+                                type="text"
+                                placeholder="Edit Task"
+                                value={editedTask}
+                                onChange={(e) => {
+                                    if (e.target.value.length <= maxTitleLength) {
+                                        setEditedTask(e.target.value);
+                                    }
+                                }}
+                                maxLength={maxTitleLength}
+
+                            />
+                        </div>
                         <div className="todo__content-wrapper">
                             <input
                                 className="todo__content-input"

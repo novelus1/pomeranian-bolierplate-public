@@ -15,6 +15,12 @@
   gap: 0.5em;
 }
 
+.todo__item-actions button:hover {
+  color: #ff4d69;
+  filter: invert(9%) sepia(99%) saturate(5630%) hue-rotate(340deg)
+    brightness(121%) contrast(148%);
+}
+
 .todo__item-remove {
   width: 25px;
   height: 25px;
@@ -46,7 +52,7 @@
 }
 
 .todo__item.completed-overlay {
-  background-color: green;
+  background-color: rgb(85, 230, 85);
 }
 
 .todo__item-content {
@@ -66,6 +72,7 @@
 .todo__task-input,
 .todo__content-input {
   margin-bottom: 1em;
+  max-width: 100%;
 }
 
 .todo__content-wrapper,
@@ -76,9 +83,26 @@
   align-items: center;
 }
 
+.todo__content-wrapper button {
+  padding: 1.25rem 2.2rem 1.25rem 2.2rem;
+  border-radius: 0.5rem;
+  border-color: #23213d;
+  background: #23213d;
+  color: white;
+}
+
 @media (max-width: 840px) {
   .todo__item-actions {
     margin-top: 2.5em;
     gap: 0.5em;
+  }
+}
+
+@media (max-width: 240px) {
+  .todo__item-actions {
+    flex-direction: column;
+    height: 80%;
+
+    max-width: 80%;
   }
 }

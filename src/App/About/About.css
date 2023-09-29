@@ -5,16 +5,6 @@
   user-select: none;
 }
 
-.about__aside-container {
-  width: 600px;
-  max-width: 95%;
-}
-
-.about__about-container {
-  width: 600px;
-  max-width: 95%;
-}
-
 @media (max-width: 1370px) {
   .about__wrapper {
     flex-direction: column;
@@ -29,7 +19,7 @@
   }
 }
 
-@media (max-width: 155px) {
+@media (max-width: 250px) {
   body {
     overflow-x: hidden;
   }

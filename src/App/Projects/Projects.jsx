@@ -3,13 +3,14 @@ import ProjectCard from '../Components/ProjectComponents/ProjectCard/ProjectCard
 import mole from '../Images/ProjectCardIcons//hitthemole.svg';
 import form from '../Images/ProjectCardIcons/form.svg';
 import memo from '../Images/ProjectCardIcons/memo.svg';
+import todo from '../Images/ProjectCardIcons/todo.svg';
 import './Projects.css'
 
 const availableCards = [
   {
     sectionTitle: 'Hit The Mole',
     icon: <img src={mole} alt="mole project" />,
-    description: 'A game about hitting moles!',
+    description: 'A game about hitting moles',
     link: '/projects/hit-the-mole',
   },
   {
@@ -18,6 +19,13 @@ const availableCards = [
     description: 'A product order form template',
     link: '/projects/form',
   },
+  {
+    sectionTitle: 'To Do List',
+    icon: <img src={todo} alt="mole project" />,
+
+    description: 'To do list with completion and editing',
+    link: '/projects/to-do-list',
+  },
 
   {
     sectionTitle: 'Memory Game',
@@ -25,15 +33,9 @@ const availableCards = [
 
     description: 'Card matching memory game',
     link: '/projects/memo-game',
-  },
+  }
 
-  {
-    sectionTitle: 'To Do List',
-    icon: <img src={mole} alt="mole project" />,
 
-    description: 'To Do List',
-    link: '/projects/to-do-list',
-  },
 ];
 export const Projects = () => {
   return (

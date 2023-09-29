@@ -3,7 +3,7 @@ import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 import { NotFound } from './App/Components/SectionComponents/NotFound/NotFound';
 import { Layout } from './App/Layout/Layout';
 import { Dashboard } from './App/Dashboard/Dashboard';
-import { CV } from './App/CV/CV';
+import CV from './App/CV/CV';
 import { About } from './App/About/About';
 import { Techstack } from './App/Techstack/Techstack';
 import { Projects } from './App/Projects/Projects';
