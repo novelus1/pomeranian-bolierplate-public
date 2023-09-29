@@ -1,19 +1,17 @@
 import DashboardCard from '../Components/SectionComponents/DashboardCard/DashboardCard';
 import edit from '../Images/DashboardCardIcons/edit.svg';
 import code from '../Images/DashboardCardIcons/code.svg';
-import cv from '../Images/DashboardCardIcons/personalcard.svg';
 import about from '../Images/DashboardCardIcons/about.png';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
 
 const availableCards = [
   {
-    sectionTitle: 'My CV',
-    icon: <img src={cv} alt="business card resume" />,
-    description: 'CV and experience preview',
-    link: '/cv',
+    sectionTitle: 'About',
+    icon: <img src={about} alt="about" />,
+    description: 'My personal information and CV',
+    link: '/about',
   },
-
   {
     sectionTitle: 'Projects',
     icon: <img src={edit} alt="exercise resume" />,
@@ -27,12 +25,7 @@ const availableCards = [
     link: '/tech',
   },
 
-  {
-    sectionTitle: 'About',
-    icon: <img src={about} alt="about" />,
-    description: 'Here you can see who I am',
-    link: '/about',
-  },
+
 ];
 export const Dashboard = () => {
   return (

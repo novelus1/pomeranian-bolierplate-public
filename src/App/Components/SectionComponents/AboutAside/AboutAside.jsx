@@ -4,6 +4,11 @@ import phone from '../../../Images/AboutIcons/phone.svg';
 import email from '../../../Images/AboutIcons/email.png';
 import linkedin from '../../../Images/AboutIcons/linkedin.png';
 import github from '../../../Images/AboutIcons/github.png';
+import resume from '../../../Images/resume.pdf';
+import cv from '../../../Images/DashboardCardIcons/personalcard.svg'
+
+
+
 import './AboutAside.css';
 
 const AboutAside = () => {
@@ -53,6 +58,12 @@ const AboutAside = () => {
                         rel="noopener noreferrer" target="_blank"
                     >
                         <img className="aside__icon" src={linkedin} alt="LinkedIn" /> LinkedIn
+                    </a>
+                </div>
+                <div className="aside__resume-button">
+                    <a href={resume} download="Krzysztof Truszkowski">
+                        <img className="aside__icon" src={cv} alt="CV" style={{ marginRight: "5px" }} />
+                        Download CV
                     </a>
                 </div>
             </aside>

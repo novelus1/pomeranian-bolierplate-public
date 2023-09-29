@@ -9,6 +9,10 @@
   vertical-align: text-top;
 }
 
+aside a:hover {
+  color: #ff4d69;
+}
+
 .aside__about-description {
   font-size: 20px;
   font-weight: bold;
@@ -18,7 +22,7 @@
 
 .aside-container {
   position: sticky;
-  top: 6em;
+  top: 3.2em;
 }
 
 aside div {
@@ -45,11 +49,16 @@ a:visited {
   text-decoration: none;
   color: black;
 }
-
-@media (min-width: 1371px) {
-  aside {
-    height: 670px;
-  }
+.aside__resume-button {
+  margin: 0.5em auto;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  max-width: 50%;
+  max-height: 50%;
 }
 
 @media (max-width: 1370px) {

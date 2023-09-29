@@ -34,6 +34,12 @@
   margin-left: 10px;
 }
 
+@media (min-width: 1371px) {
+  .about__container {
+    min-height: 690px;
+  }
+}
+
 @media (max-width: 1370px) {
   .about__container {
     margin: auto 5em;

@@ -6,10 +6,9 @@ import './Navbar.css';
 
 const availableMenuOptions = [
     { menuOption: 'Home', route: '/dashboard' },
-    { menuOption: 'CV', route: '/cv' },
+    { menuOption: 'About', route: '/about' },
     { menuOption: 'Projects', route: '/projects' },
     { menuOption: 'Stack', route: '/tech' },
-    { menuOption: 'About', route: '/about' },
 ];
 function Navbar() {
     const [isMenuExpanded, setMenuExpanded] = useState(window.innerWidth < 690);
